@@ -1,0 +1,134 @@
+:root {
+    --clr-dark: #070a12;
+    --clr-light: #434379;
+    --clr-accent: #f43f70;
+  }
+
+  *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  word-spacing: 1.4px;
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3rem;
+  /* border-bottom: 5px solid var(--clr-dark); */
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    display: inline-block;
+    background: none;
+    text-transform: capitalize;
+  }
+
+  hr {
+    box-sizing: content-box; /* 1 */
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+
+  a {
+    background-color: transparent;
+  }
+
+  abbr[title] {
+    border-bottom: none; /* 1 */
+    text-decoration: underline; /* 2 */
+    text-decoration: underline dotted; /* 2 */
+  }
+
+  template {
+    display: none;
+  }
+  
+  /**
+   * Add the correct display in IE 10.
+   */
+  
+  [hidden] {
+    display: none;
+  }
+  
+  a,
+  label,
+  button,
+  select,
+  summary,
+  [type='radio'],
+  [type='submit'],
+  [type='checkbox'] {
+    cursor: pointer;
+  }
+  
+  button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    display: inline-block;
+    background: none;
+    text-transform: capitalize;
+  }
+  
+  a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    display: inline-block;
+    background: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  img {
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
