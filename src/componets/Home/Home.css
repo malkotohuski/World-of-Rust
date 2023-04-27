@@ -1,76 +1,154 @@
 .home-page {
-   /*  background: url(../../images/731985.png) no-repeat center center fixed; */
-    background-position: center;
-    background-size: cover;
-    height: 94vh;
-    position: relative;
+  /*  background: url(../../images/731985.png) no-repeat center center fixed; */
+  background-position: center;
+  background-size: cover;
+  height: 94vh;
+  position: relative;
+  background-color: antiquewhite;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .btn-more {
-    font-size: 2rem;
-    font-weight: 700;
-    padding: 0.5em 1em;
-    color: var(--clr-accent);
-    background-color: var(--clr-rgba);
-    border: 10px solid var(--clr-accent);
-    border-radius: 5px;
-  
-    transition-property: transform;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-    
+  font-size: 7rem;
+  font-weight: 700;
+  padding: 0.5em 1em;
+  color: var(--clr-accent);
+  background-color: var(--clr-rgba);
+  border: 10px solid var(--clr-accent);
+  border-radius: 7px;
+
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  height: 637px;
+  width: 1372px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .btn-more :hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 :root {
-    --clr-dark: #070a12;
-    --clr-light: #494977;
-    --clr-accent: #f43f70;
-    --clr-rgba: rgba(244, 63, 112, 0.2);
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  
-  * {
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  body {
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    word-spacing: 1.4px;
-    color: var(--clr-dark);
-    background-color: var(--clr-light);
-    
-  
-    height: 100vh;
+  --clr-dark: #070a12;
+  --clr-light: #494977;
+  --clr-accent: #f43f70;
+  --clr-rgba: rgba(244, 63, 112, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  word-spacing: 1.4px;
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
+
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-300px);
   }
 
-  @keyframes slideInLeft {
-    from {
-        transform: translateX(-300px);
-    }
-
-    to{
-        transform: translateX(0);
-    }
+  to {
+    transform: translateX(0);
   }
+}
 
-  .heading-1 {
-    animation-name: slideInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-in ;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction:normal ;
-    animation-fill-mode: none;
-  }
+.heading-1 {
+  animation-name: slideInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-iteration-count:1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+
+  position: static;
+}
+
+.home-container {
+  display: flex;
+  grid-template-rows: repeat(1, 175px);
+  grid-template-columns: repeat(1, 330px);
+  grid-gap: 1em;
+  bottom: -50%;
+}
+
+.item {
+  width: 330px;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: var(--clr-light);
+  font-weight: 300;
+  font-size: 2.25rem;
+}
+
+.row-item {
+  width: 210px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: var(--clr-light);
+  font-weight: 300;
+  font-size: 2.25rem;
+}
+
+.item-1 {
+  background-color: var(--clr-lightRose);
+}
+
+.item-2 {
+  background-color: var(--clr-sky);
+}
+
+.item-3 {
+  background-color: var(--clr-yellow);
+}
+
+.item-4 {
+  background-color: var(--clr-green);
+}
+
+.item-5 {
+  background-color: var(--clr-violet);
+}
+
+.item-6 {
+  background-color: var(--clr-pink);
+}
+
+.item-7 {
+  background-color: var(--clr-lightRose);
+}
+
+.item-8 {
+  background-color: var(--clr-sky);
+}
