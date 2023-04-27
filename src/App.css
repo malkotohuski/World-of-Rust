@@ -1,8 +1,15 @@
 :root {
     --clr-dark: #070a12;
-    --clr-light: #434379;
-    --clr-accent: #f43f70;
+    --clr-light: #f1f5f9;
+    --clr-accent: #e11d48;
+    --clr-lightRose: #fb7185;
+    --clr-green: #4ade80;
+    --clr-sky: #38bdf8;
+    --clr-pink: #f472b6;
+    --clr-violet: #a78bfa;
+    --clr-yellow: #facc15;
   }
+  
 
   *,
 *::before,
@@ -17,10 +24,11 @@
 body {
   margin: 0;
   padding: 0;
-  line-height: 1.5;
+  line-height: 1.6;
   word-spacing: 1.4px;
-  color: var(--clr-dark);
+  font-family: 'Roboto', sans-serif;
   background-color: var(--clr-light);
+  color: var(--clr-dark);
 }
 
 section {
@@ -28,8 +36,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   overflow: hidden;
+  background-color: antiquewhite;
 }
 
 h1 {
