@@ -9,7 +9,7 @@ function NavScrollExample() {
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">Новите Съседи </Navbar.Brand>
+                <Navbar.Brand href="/">Новите Съседи</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -17,16 +17,16 @@ function NavScrollExample() {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="/contacts">Contacts</Nav.Link>
-                        <Nav.Link href="#action2">За нас !</Nav.Link>
-                        <NavDropdown title="Добре дошли!" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Вход</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">
-                                Регистрация
+                        <Nav.Link href="/contacts">Contact us</Nav.Link>
+                        <Nav.Link href="#action2">About us</Nav.Link>
+                        <NavDropdown title="Welcome" id="navbarScrollingDropdown">
+                            <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                            <NavDropdown.Item href="/register">
+                            Register
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action5">
-                                Имам проблем!
+                                Have problem !
                             </NavDropdown.Item>
                         </NavDropdown>
                         {/* <Nav.Link href="#" disabled>
@@ -36,11 +36,11 @@ function NavScrollExample() {
                     <Form className="d-flex">
                         <Form.Control
                             type="search"
-                            placeholder="Амадор"
+                            placeholder="Posty"
                             className="me-2"
                             aria-label="Search"
                         />
-                        <Button variant="outline-success">Търси</Button>
+                        <Button variant="outline-success">Search</Button>
                     </Form>
                 </Navbar.Collapse>
             </Container>

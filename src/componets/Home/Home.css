@@ -21,12 +21,12 @@
   background-color: var(--clr-rgba);
   border: 10px solid var(--clr-accent);
   border-radius: 7px;
-
+  background-image: url(../../images/learn-screen.png);
+  background-position: 100%;
   transition-property: transform;
   transition-duration: 0.3s;
   transition-timing-function: ease;
   transition-delay: 0s;
-
   margin: 0;
   position: absolute;
   left: 50%;
@@ -36,8 +36,16 @@
   transform: translate(-50%, -50%);
 }
 
-.btn-more :hover {
-  transform: translateY(-5px);
+/* .btn-more :hover {
+  transform: translateY(-5px); <--moved!
+} */
+
+.learn-more {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
 }
 
 :root {
@@ -82,10 +90,9 @@ body {
   animation-duration: 2s;
   animation-timing-function: ease-in;
   animation-delay: 0s;
-  animation-iteration-count:1;
+  animation-iteration-count: 1;
   animation-direction: normal;
   animation-fill-mode: none;
-
   position: static;
 }
 
@@ -100,8 +107,6 @@ body {
 .item {
   width: 330px;
   height: 170px;
-  display: flex;
-  justify-content: center;
   align-items: center;
   border-radius: 10px;
   color: var(--clr-light);
@@ -126,15 +131,21 @@ body {
 }
 
 .item-2 {
-  background-color: var(--clr-sky);
+  background-image: url(../../images/posty-image.jpg);
+  background-size: cover;
+  font-weight: bold;
 }
 
 .item-3 {
-  background-color: var(--clr-yellow);
+  background-image: url(../../images/qaixx-image.jpg);
+  background-size: cover;
+  font-weight: bold;
 }
 
 .item-4 {
-  background-color: var(--clr-green);
+  background-image: url(../../images/albin-image.jpg);
+  background-size: cover;
+  font-weight: bold;
 }
 
 .item-5 {
@@ -143,6 +154,7 @@ body {
 
 .item-6 {
   background-color: var(--clr-pink);
+
 }
 
 .item-7 {
@@ -152,3 +164,12 @@ body {
 .item-8 {
   background-color: var(--clr-sky);
 }
+
+.posty-image,
+.qaixx-image,
+.albin-image
+{
+ text-decoration: none;
+ color: aliceblue;
+}
+

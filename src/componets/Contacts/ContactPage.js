@@ -29,10 +29,12 @@ const ContactPage = () => {
             <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
           </label>
         </div>
+        <div className='massage-row'>
         <label>
           Message:
           <textarea value={message} onChange={(event) => setMessage(event.target.value)} />
         </label>
+        </div>
         <button type="submit">Submit</button>
       </form>
     </div>

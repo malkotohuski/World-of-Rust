@@ -1,12 +1,18 @@
 import React from "react";
-import '../Home/Home.css'
+import '../Home/Home.css';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+const onClickHandler = () => {
+
+}
 
 const Home = () => {
     return (
         <div className="home-page">
             <section>
-                <h2 className="heading-1">Welcome to the world of Rust !</h2>
+                <h2 className="heading-1">Welcome to the world of Rust ! <FontAwesomeIcon icon="fa-solid fa-gun" /></h2>
+
             </section>
 
             <head>
@@ -25,14 +31,29 @@ const Home = () => {
 
                     <div className="home-container">
                         <div className="row-item item-1">1</div>
-                        <div className="item item-2">2</div>
-                        <div className="item item-3">3</div>
-                        <div className="item item-4">4</div>
+                        <div className="item item-2">
+                            <div className="posty-rust">
+                            </div>
+                            <Link to='/posty' className="posty-image" onClick={onClickHandler}>Posty</Link>
+                        </div>
+                        <div className="item item-3">
+                            <div className="qaixx-rust">
+                            </div>
+                            <Link to='/qaixx' className="qaixx-image" onClick={onClickHandler}>qaixx</Link>
+                        </div>
+                        <div className="item item-4">
+                            <div className="albin-rust">
+                            </div>
+                            <Link to='/albin' className="albin-image" onClick={onClickHandler}>Albin</Link>
+                        </div>
                         <div className="item item-5">5</div>
                         <div className="row-item item-6">6</div>
                     </div>
                 </section>
-                <button class="btn-more">learn more</button>
+                <div className="btn-more">
+                    <Link to='/learnmore' className="learn-more" onClick={onClickHandler}>learn more </Link>
+                    {/*   <button className="btn-more" onClick={learnMore}>learn more</button> */}
+                </div>
             </body>
 
         </div>
