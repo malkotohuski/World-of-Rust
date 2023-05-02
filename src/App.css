@@ -45,16 +45,6 @@ h1 {
   /* border-bottom: 5px solid var(--clr-dark); */
 }
 
-button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    display: inline-block;
-    background: none;
-    text-transform: capitalize;
-  }
-
   hr {
     box-sizing: content-box; /* 1 */
     height: 0; /* 1 */
@@ -64,10 +54,6 @@ button {
   pre {
     font-family: monospace, monospace; /* 1 */
     font-size: 1em; /* 2 */
-  }
-
-  a {
-    background-color: transparent;
   }
 
   abbr[title] {
@@ -87,7 +73,7 @@ button {
   [hidden] {
     display: none;
   }
-  
+
   a,
   label,
   button,
@@ -99,25 +85,13 @@ button {
     cursor: pointer;
   }
   
-  button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    display: inline-block;
-    background: none;
-    text-transform: capitalize;
-  }
-  
   a {
     margin: 0;
     padding: 0;
     border: 0;
     outline: 0;
-    display: inline-block;
     background: none;
     text-transform: capitalize;
-    text-decoration: none;
     color: inherit;
   }
   
