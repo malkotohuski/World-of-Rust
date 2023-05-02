@@ -26,9 +26,12 @@ body {
   }
   
   label {
-    display: block;
     margin-bottom: 10px;
     text-align: center; /* Added this line */
+  }
+
+  .massage-row {
+    display: grid !important;
   }
   
   input, textarea {
