@@ -39,14 +39,18 @@ const Home = () => {
                         <div className="item item-3">
                             <div className="qaixx-rust">
                             </div>
-                            <Link to='/qaixx' className="qaixx-image" onClick={onClickHandler}>qaixx</Link>
+                            <Link to='/qaixx' className="qaixx-image" onClick={onClickHandler}>Qaixx</Link>
                         </div>
                         <div className="item item-4">
                             <div className="albin-rust">
                             </div>
                             <Link to='/albin' className="albin-image" onClick={onClickHandler}>Albin</Link>
                         </div>
-                        <div className="item item-5">5</div>
+                        <div className="item item-5">
+                            <div className="trausi -rust">
+                            </div>
+                            <Link to='/trausi' className="trausi-image" onClick={onClickHandler}>Trausi </Link>
+                        </div>
                         <div className="row-item item-6">6</div>
                     </div>
                 </section>

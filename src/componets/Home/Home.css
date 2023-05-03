@@ -139,6 +139,7 @@ body {
 .item-3 {
   background-image: url(../../images/qaixx-image.jpg);
   background-size: cover;
+  
   font-weight: bold;
 }
 
@@ -149,7 +150,10 @@ body {
 }
 
 .item-5 {
-  background-color: var(--clr-violet);
+  background-image: url(../../images/trausi-image.png);
+  background-size: cover;
+  background-position: 100% 100%;
+  font-weight: bold;
 }
 
 .item-6 {
@@ -167,9 +171,8 @@ body {
 
 .posty-image,
 .qaixx-image,
-.albin-image
-{
- text-decoration: none;
- color: aliceblue;
+.albin-image,
+.trausi-image {
+  text-decoration: none;
+  color: aliceblue;
 }
-
