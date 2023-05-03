@@ -54,10 +54,10 @@ const Home = () => {
                         <div className="row-item item-6">6</div>
                     </div>
                 </section>
-                <div className="btn-more">
+               {/*  <div className="btn-more">
                     <Link to='/learnmore' className="learn-more" onClick={onClickHandler}>learn more </Link>
-                    {/*   <button className="btn-more" onClick={learnMore}>learn more</button> */}
-                </div>
+                      <button className="btn-more" onClick={learnMore}>learn more</button> 
+                </div>  */}
             </body>
 
         </div>
