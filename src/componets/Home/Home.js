@@ -9,7 +9,7 @@ const onClickHandler = () => {
 
 const Home = () => {
     return (
-        <div className="home-page">
+        <div className="Container">
             <section>
                 <h2 className="heading-1">Welcome to the world of Rust ! <FontAwesomeIcon icon="fa-solid fa-gun" /></h2>
 

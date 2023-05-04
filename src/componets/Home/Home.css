@@ -2,10 +2,13 @@
   /*  background: url(../../images/731985.png) no-repeat center center fixed; */
   background-position: center;
   background-size: cover;
-  height: 94vh;
   position: relative;
   background-color: antiquewhite;
+ 
+    
 }
+
+
 
 *,
 *::before,
@@ -133,13 +136,13 @@ body {
 .item-2 {
   background-image: url(../../images/posty-image.jpg);
   background-size: cover;
+  
   font-weight: bold;
 }
 
 .item-3 {
   background-image: url(../../images/qaixx-image.jpg);
   background-size: cover;
-  
   font-weight: bold;
 }
 
@@ -152,7 +155,6 @@ body {
 .item-5 {
   background-image: url(../../images/trausi-image.png);
   background-size: cover;
-  background-position: 100% 100%;
   font-weight: bold;
 }
 

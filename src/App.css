@@ -1,17 +1,17 @@
 :root {
-    --clr-dark: #070a12;
-    --clr-light: #f1f5f9;
-    --clr-accent: #e11d48;
-    --clr-lightRose: #fb7185;
-    --clr-green: #4ade80;
-    --clr-sky: #38bdf8;
-    --clr-pink: #f472b6;
-    --clr-violet: #a78bfa;
-    --clr-yellow: #facc15;
-  }
-  
+  --clr-dark: #070a12;
+  --clr-light: #f1f5f9;
+  --clr-accent: #e11d48;
+  --clr-lightRose: #fb7185;
+  --clr-green: #4ade80;
+  --clr-sky: #38bdf8;
+  --clr-pink: #f472b6;
+  --clr-violet: #a78bfa;
+  --clr-yellow: #facc15;
+}
 
-  *,
+
+*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -37,6 +37,7 @@ section {
   align-items: center;
   overflow: hidden;
   background-color: antiquewhite;
+  display: flex;
 }
 
 h1 {
@@ -44,72 +45,94 @@ h1 {
   /* border-bottom: 5px solid var(--clr-dark); */
 }
 
-  hr {
-    box-sizing: content-box; /* 1 */
-    height: 0; /* 1 */
-    overflow: visible; /* 2 */
-  }
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
 
-  pre {
-    font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
-  }
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
 
-  abbr[title] {
-    border-bottom: none; /* 1 */
-    text-decoration: underline; /* 2 */
-    text-decoration: underline dotted; /* 2 */
-  }
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
 
-  template {
-    display: none;
-  }
-  
-  /**
+template {
+  display: none;
+}
+
+/**
    * Add the correct display in IE 10.
    */
-  
-  [hidden] {
-    display: none;
-  }
 
-  a,
-  label,
-  button,
-  select,
-  summary,
-  [type='radio'],
-  [type='submit'],
-  [type='checkbox'] {
-    cursor: pointer;
+[hidden] {
+  display: none;
+}
+
+a,
+label,
+button,
+select,
+summary,
+[type='radio'],
+[type='submit'],
+[type='checkbox'] {
+  cursor: pointer;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  text-transform: capitalize;
+  color: inherit;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  .view {
+    width: 400px;
   }
-  
-  a {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    background: none;
-    text-transform: capitalize;
-    color: inherit;
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+  .view {
+    width: 600px;
   }
-  
-  img {
-    pointer-events: none;
-    user-select: none;
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  img,
-  picture,
-  video,
-  canvas,
-  svg {
-    display: block;
-    max-width: 100%;
-  }
+}
