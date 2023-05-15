@@ -24,7 +24,7 @@ function Qaixx() {
       <p>Make sure to follow Qaixx on his streaming platforms:</p>
       <ul>
         <li>Twitch: <a href="https://www.twitch.tv/qaixx" target="_blank" rel="noopener noreferrer">qaixx</a></li>
-        <li>Twitter: <a href="https://twitter.com/qaixx" target="_blank" rel="noopener noreferrer">@qaixx</a></li>
+        <li>Twitter: <a href="https://twitter.com/qaixxxx?lang=bg" target="_blank" rel="noopener noreferrer">@qaixx</a></li>
         <li>YouTube: <a href="https://www.youtube.com/qaixx" target="_blank" rel="noopener noreferrer">Qaixx's YouTube Channel</a></li>
       </ul>
     </div>

@@ -23,8 +23,8 @@ function Albin() {
       <p>Make sure to follow Albin on his streaming platforms:</p>
       <ul>
         <li>Twitch: <a href="https://www.twitch.tv/albin" target="_blank" rel="noopener noreferrer">albin</a></li>
-        <li>Twitter: <a href="https://twitter.com/albin" target="_blank" rel="noopener noreferrer">@albin</a></li>
-        <li>YouTube: <a href="https://www.youtube.com/albin" target="_blank" rel="noopener noreferrer">Albin's YouTube Channel</a></li>
+        <li>Twitter: <a href="https://twitter.com/albinrust" target="_blank" rel="noopener noreferrer">@albin</a></li>
+        <li>YouTube: <a href="https://www.youtube.com/@albin8819" target="_blank" rel="noopener noreferrer">Albin's YouTube Channel</a></li>
       </ul>
     </div>
   );
