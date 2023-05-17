@@ -14,11 +14,6 @@ import Trausi from './componets/Steamers/Trausi/Trausi';
 
 
 
-
-
-
-
-
 function App() {
     return (
 
