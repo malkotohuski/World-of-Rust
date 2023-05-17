@@ -1,6 +1,6 @@
 import React from 'react';
 import './Trausi.css';
-import trausiImage from '../../../images/trausi-image.jpg'; // Replace with the actual path to your Trausi image file
+import trausiImage from '../../../images/trausi-image.png'; // Replace with the actual path to your Trausi image file
 
 function Trausi() {
   return (

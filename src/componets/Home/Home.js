@@ -1,17 +1,37 @@
 import React from "react";
 import '../Home/Home.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const onClickHandler = () => {
 
-}
+function Home() {
 
-const Home = () => {
+    const history = useNavigate();
+
+    const handleLogout = () => {
+        // Clear the stored token and email from localStorage or sessionStorage
+        localStorage.removeItem('token');
+        localStorage.removeItem('email');
+        // Redirect to the login page after logout
+        history('/');
+    };
+
+    const email = localStorage.getItem('email');
+
+    const isLoggedIn = !!localStorage.getItem('token');
+
+    const onClickHandler = () => {
+    }
+
     return (
         <div className="Container">
             <section>
-                <h2 className="heading-1">Welcome to the world of Rust ! <FontAwesomeIcon icon="fa-solid fa-gun" /></h2>
+
+                <div className="heading-1"><h2>Welcome to the world of Rust
+                    {isLoggedIn && <p>{email}</p>}
+                    {isLoggedIn && <button onClick={handleLogout}>Logout</button>}
+                </h2>
+                    <FontAwesomeIcon icon="fa-solid fa-gun" /></div>
 
             </section>
 
@@ -54,7 +74,8 @@ const Home = () => {
                         <div className="row-item item-6">6</div>
                     </div>
                 </section>
-               {/*  <div className="btn-more">
+
+                {/*  <div className="btn-more">
                     <Link to='/learnmore' className="learn-more" onClick={onClickHandler}>learn more </Link>
                       <button className="btn-more" onClick={learnMore}>learn more</button> 
                 </div>  */}

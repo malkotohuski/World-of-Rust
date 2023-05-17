@@ -24,7 +24,7 @@ function Posty() {
       <p>Make sure to follow Posty on his streaming platforms:</p>
       <ul>
         <li>Twitch: <a href="https://www.twitch.tv/posty" target="_blank" rel="noopener noreferrer">posty</a></li>
-        <li>Twitter: <a href="https://twitter.com/posty" target="_blank" rel="noopener noreferrer">@posty</a></li>
+        <li>Twitter: <a href="https://twitter.com/postyofficial?lang=bg" target="_blank" rel="noopener noreferrer">@posty</a></li>
         <li>YouTube: <a href="https://www.youtube.com/posty" target="_blank" rel="noopener noreferrer">Posty's YouTube Channel</a></li>
       </ul>
     </div>
