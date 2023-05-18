@@ -6,11 +6,14 @@ import Navbar from './componets/Navbar/Navbar';
 import ContactPage from './componets/Contacts/ContactPage';
 import Login from './componets/Login/Login';
 import Register from './componets/Register/Register';
-import NotFound from './NotFound/NotFound';
+import NotFound from './componets/NotFound/NotFound';
 import Posty from './componets/Steamers/Posty/Posty';
 import Albin from './componets/Steamers/Albin/Albin';
 import Qaixx from './componets/Steamers/Qaixx/Qaixx';
 import Trausi from './componets/Steamers/Trausi/Trausi';
+import Barcode from 'react-barcode';
+import AboutUs from './componets/About/About';
+import { Search } from '@mui/icons-material';
 
 
 
@@ -26,6 +29,10 @@ function App() {
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/*' element={<NotFound />} />
+                    <Route path='/barcode' element={<Barcode />} />
+                    <Route path='/about' element={<AboutUs />} />
+                    <Route exact path="/search" element={<Search />} />
+                    
 
                     <Route path='/posty' element={<Posty />} />
                     <Route path='/albin' element={<Albin />} />

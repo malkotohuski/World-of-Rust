@@ -3,9 +3,9 @@
   background-position: center;
   background-size: cover;
   position: relative;
-  background-color: antiquewhite;
- 
-    
+  background-color: #f7d7c4;
+
+
 }
 
 
@@ -129,14 +129,14 @@ body {
   font-size: 2.25rem;
 }
 
-.item-1 {
+/* .item-1 {
   background-color: var(--clr-lightRose);
-}
+} */
 
 .item-2 {
   background-image: url(../../images/posty-image.jpg);
   background-size: cover;
-  
+
   font-weight: bold;
 }
 
@@ -158,18 +158,18 @@ body {
   font-weight: bold;
 }
 
-.item-6 {
+/* .item-6 {
   background-color: var(--clr-pink);
 
-}
+} */
 
-.item-7 {
+/* .item-7 {
   background-color: var(--clr-lightRose);
 }
 
 .item-8 {
   background-color: var(--clr-sky);
-}
+} */
 
 .posty-image,
 .qaixx-image,

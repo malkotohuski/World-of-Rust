@@ -4,8 +4,18 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+
 
 function NavScrollExample() {
+    const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = () => {
+        // Redirect to page with the same name
+        navigate(`/${searchTerm}`);
+    }
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
@@ -18,11 +28,11 @@ function NavScrollExample() {
                         navbarScroll
                     >
                         <Nav.Link href="/contacts">Contact us</Nav.Link>
-                        <Nav.Link href="#action2">About us</Nav.Link>
+                        <Nav.Link href="/about">About us</Nav.Link>
                         <NavDropdown title="Welcome" id="navbarScrollingDropdown">
                             <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                             <NavDropdown.Item href="/register">
-                            Register
+                                Register
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action5">
@@ -36,16 +46,20 @@ function NavScrollExample() {
                     <Form className="d-flex">
                         <Form.Control
                             type="search"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
                             placeholder="Posty"
                             className="me-2"
                             aria-label="Search"
                         />
-                        <Button variant="outline-success">Search</Button>
+                        <Button onClick={handleSearch} variant="outline-success">Search</Button>
                     </Form>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
     );
-}
+};
+
+   
 
 export default NavScrollExample;

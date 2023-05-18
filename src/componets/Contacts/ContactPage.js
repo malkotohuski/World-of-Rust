@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -6,10 +7,25 @@ const ContactPage = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
-    // Replace the console.log statement with your own logic to submit the form data
+
+    try {
+      const response = await axios.post('/api/send-email', {
+        name,
+        email,
+        message,
+      });
+
+      console.log(response.data); // Optional: Handle server response
+
+      // Clear form fields after successful submission
+      setName('');
+      setEmail('');
+      setMessage('');
+    } catch (error) {
+      console.error(error); // Optional: Handle error
+    }
   };
 
   return (
