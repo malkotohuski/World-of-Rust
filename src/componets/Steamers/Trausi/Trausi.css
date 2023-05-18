@@ -1,12 +1,21 @@
 .container {
-    padding: 20px;
     background-image: url("../../../images/-Rust-game-.jpg"); /* Replace with the actual path to your Rust wallpaper image file */
-    background-size: cover;
-    background-position: center;
-    color: #fff; /* Set the text color to white for better visibility */
+ /* Set the text color to white for better visibility */
+ text-align: center;
+ padding: 20px;
+  }
+
+  .image-container {
+    display: inline-table;
+    margin: 20px 0;
   }
   
-.section {
+  img {
+    max-width: 300px;
+    border-radius: 50%;
+  }
+  
+  .section {
     background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value (0.6) to make it more or less see-through */
     padding: 20px;
     margin-bottom: 40px;
@@ -15,47 +24,20 @@
   .section h2 {
     font-size: 24px;
     color: #fff;
+    margin-bottom: 10px;
   }
   
   .section p {
     font-size: 18px;
     color: #fff;
+    margin-bottom: 20px;
   }
   
-  img {
-    max-width: 300px;
-    border-radius: 50%;
+  ul {
+    text-align: left;
+    margin-left: 40px;
   }
   
-  .about {
-    text-align: center;
-    margin-bottom: 40px;
+  a {
+    color: #007bff;
   }
-  
-  .about h2 {
-    font-size: 24px;
-    color: #555;
-  }
-  
-  .about p {
-    font-size: 18px;
-    color: #777;
-  }
-  
-  .schedule {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  
-  .schedule h2 {
-    font-size: 24px;
-    color: #555;
-  }
-  
-  .schedule p {
-    font-size: 18px;
-    color: #777;
-  }
-  
-
-  

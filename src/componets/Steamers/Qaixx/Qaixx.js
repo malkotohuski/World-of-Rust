@@ -5,7 +5,7 @@ import qaixxImage from '../../../images/qaixx-image.jpg'
 
 function Qaixx() {
   return (
-    <div>
+    <div className='container'>
       <h1>Qaixx - Rust Streamer</h1>
       <p>Join Qaixx on thrilling Rust adventures and witness amazing gameplay in the world of Rust.</p>
       <div className="image-container">

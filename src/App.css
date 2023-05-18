@@ -36,7 +36,6 @@ section {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: antiquewhite;
   display: flex;
 }
 
@@ -124,7 +123,7 @@ svg {
 }
 
 /* For Mobile */
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 1080px) {
   .view {
     width: 400px;
   }
