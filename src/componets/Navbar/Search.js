@@ -10,12 +10,20 @@ const SearchComponent = () => {
     navigate(`/${searchTerm}`);
   };
 
+  const handleKeyDown = e => {
+    if (e.keyCode === 13) {
+      console.log('enter')
+      handleSearch();
+    }
+  };
+
   return (
     <div>
       <input
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
       <button onClick={handleSearch}>Search</button>
     </div>
