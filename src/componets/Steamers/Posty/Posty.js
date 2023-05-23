@@ -1,8 +1,15 @@
 import React from 'react';
 import './Posty.css';
-import postyImage from '../../../images/posty-image.jpg' 
+import postyImage from '../../../images/posty-image.jpg';
 
 function Posty() {
+  const handleAddComment = () => {
+    // Handle adding a comment logic here
+    // You can implement the functionality to add a comment
+    // based on your requirements or use case.
+    console.log('Add Comment clicked');
+  };
+
   return (
     <div className="container">
       <h1>Posty - Rust Streamer</h1>
@@ -27,6 +34,7 @@ function Posty() {
         <li>Twitter: <a href="https://twitter.com/postyofficial?lang=bg" target="_blank" rel="noopener noreferrer">@posty</a></li>
         <li>YouTube: <a href="https://www.youtube.com/posty" target="_blank" rel="noopener noreferrer">Posty's YouTube Channel</a></li>
       </ul>
+      <button onClick={handleAddComment}>Add Comment</button>
     </div>
   );
 }
