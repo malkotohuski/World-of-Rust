@@ -24,29 +24,29 @@ function Home() {
     }
 
     return (
-        <div className="Container">
-            <section>
+        <body>
+            <div className="Container">
+                <section>
+                    <div className="heading-1"><h2>Welcome to the world of Rust
+                        {isLoggedIn && <p>{email}</p>}
+                        {isLoggedIn && <button onClick={handleLogout}>Logout</button>}
+                    </h2>
+                        <FontAwesomeIcon icon="fa-solid fa-gun" /></div>
 
-                <div className="heading-1"><h2>Welcome to the world of Rust
-                    {isLoggedIn && <p>{email}</p>}
-                    {isLoggedIn && <button onClick={handleLogout}>Logout</button>}
-                </h2>
-                    <FontAwesomeIcon icon="fa-solid fa-gun" /></div>
+                </section>
 
-            </section>
+                <head>
+                    <meta charset="UTF-8" />
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <link
+                        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+                        rel="stylesheet"
+                    />
+                    <link rel="stylesheet" href="home.css" />
+                    <title>Animate</title>
+                </head>
 
-            <head>
-                <meta charset="UTF-8" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
-                    rel="stylesheet"
-                />
-                <link rel="stylesheet" href="home.css" />
-                <title>Animate</title>
-            </head>
-            <body>
                 <section>
                     <div className="home-container">
                         <div className="row-item item-1"></div>
@@ -70,6 +70,7 @@ function Home() {
                             </div>
                             <Link to='/trausi' className="trausi-image" onClick={onClickHandler}>Trausi </Link>
                         </div>
+                        
                         <div className="row-item item-6"></div>
                     </div>
                 </section>
@@ -78,9 +79,10 @@ function Home() {
                     <Link to='/learnmore' className="learn-more" onClick={onClickHandler}>learn more </Link>
                       <button className="btn-more" onClick={learnMore}>learn more</button> 
                 </div>  */}
-            </body>
 
-        </div>
+
+            </div>
+        </body>
     );
 };
 
