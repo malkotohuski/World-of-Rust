@@ -49,7 +49,7 @@ function Home() {
 
                 <section>
                     <div className="home-container">
-                        <div className="row-item item-1"></div>
+                        {/*  <div className="row-item item-1"></div> */}
                         <div className="item item-2">
                             <div className="posty-rust">
                             </div>
@@ -70,8 +70,13 @@ function Home() {
                             </div>
                             <Link to='/trausi' className="trausi-image" onClick={onClickHandler}>Trausi </Link>
                         </div>
-                        
-                        <div className="row-item item-6"></div>
+                        <div className="item item-6">
+                            <div className="deathwingua-rust">
+                            </div>
+                            <Link to='/deathwingua ' className="deathwingua-image" onClick={onClickHandler}>Deathwingua</Link>
+                        </div>
+
+                        {/* <div className="row-item item-6"></div> */}
                     </div>
                 </section>
 

@@ -7,10 +7,13 @@ import ContactPage from './componets/Contacts/ContactPage';
 import Login from './componets/Login/Login';
 import Register from './componets/Register/Register';
 import NotFound from './componets/NotFound/NotFound';
+
 import Posty from './componets/Steamers/Posty/Posty';
 import Albin from './componets/Steamers/Albin/Albin';
 import Qaixx from './componets/Steamers/Qaixx/Qaixx';
 import Trausi from './componets/Steamers/Trausi/Trausi';
+import Deathwingua from './componets/Steamers/Deathwingua/Deathwing';
+
 import Barcode from 'react-barcode';
 import AboutUs from './componets/About/About';
 import { Search } from '@mui/icons-material';
@@ -38,6 +41,7 @@ function App() {
                     <Route path='/albin' element={<Albin />} />
                     <Route path='/qaixx' element={<Qaixx />} />
                     <Route path='/trausi' element={<Trausi />} />
+                    <Route path='/deathwingua' element={<Deathwingua />} />
                 </Routes>
             </main>
         </div>

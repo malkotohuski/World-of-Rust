@@ -44,7 +44,7 @@ const Login = () => {
                 <input type="password" value={password} onChange={handlePasswordChange} />
             </label>
             <button type="submit" className="login-button">Login</button>
-            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+            <p>Don't have an account? <a href="/register">Sign up</a></p>
         </form>
     );
 };
