@@ -1,10 +1,9 @@
 .home-page {
-  /*  background: url(../../images/731985.png) no-repeat center center fixed; */
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  background-color: #f7d7c4;
-
+    background: url(../../images/-Rust-game-.jpg) no-repeat center center fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    /*  background-color: #f7d7c4; */
 
 }
 
@@ -13,30 +12,30 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .btn-more {
-  font-size: 7rem;
-  font-weight: 700;
-  padding: 0.5em 1em;
-  color: var(--clr-accent);
-  background-color: var(--clr-rgba);
-  border: 10px solid var(--clr-accent);
-  border-radius: 7px;
-  background-image: url(../../images/learn-screen.png);
-  background-position: 100%;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-  margin: 0;
-  position: absolute;
-  left: 50%;
-  height: 637px;
-  width: 1142px;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    font-size: 7rem;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    color: var(--clr-accent);
+    background-color: var(--clr-rgba);
+    border: 10px solid var(--clr-accent);
+    border-radius: 7px;
+    background-image: url(../../images/learn-screen.png);
+    background-position: 100%;
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    height: 637px;
+    width: 1142px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 /* .btn-more :hover {
@@ -44,89 +43,90 @@
 } */
 
 .learn-more {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
 }
 
 :root {
-  --clr-dark: #070a12;
-  --clr-light: #494977;
-  --clr-accent: #f43f70;
-  --clr-rgba: rgba(244, 63, 112, 0.2);
+    --clr-dark: #070a12;
+    --clr-light: #494977;
+    --clr-accent: #f43f70;
+    --clr-rgba: rgba(244, 63, 112, 0.2);
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  word-spacing: 1.4px;
-  color: var(--clr-dark);
-  background-color: var(--clr-light);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    word-spacing: 1.4px;
+    color: var(--clr-dark);
+    background-color: var(--clr-light);
 
 }
 
 @keyframes slideInLeft {
-  from {
-    transform: translateX(-300px);
-  }
+    from {
+        transform: translateX(-300px);
+    }
 
-  to {
-    transform: translateX(0);
-  }
+    to {
+        transform: translateX(0);
+    }
 }
 
 .heading-1 {
-  animation-name: slideInLeft;
-  animation-duration: 2s;
-  animation-timing-function: ease-in;
-  animation-delay: 0s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  position: static;
+    animation-name: slideInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    position: static;
 }
 
 .home-container {
-  display: flex;
-  grid-template-rows: repeat(1, 175px);
-  grid-template-columns: repeat(1, 330px);
-  grid-gap: 1em;
-  bottom: -50%;
+    display: grid;
+    grid-template-rows: repeat(1, 175px);
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 1em;
+    bottom: -50%;
+    padding: 10px;
 }
 
 .item {
-  width: 330px;
-  height: 170px;
-  align-items: center;
-  border-radius: 10px;
-  color: var(--clr-light);
-  font-weight: 300;
-  font-size: 2.25rem;
+    width: 330px;
+    height: 170px;
+    align-items: center;
+    border-radius: 10px;
+    color: var(--clr-light);
+    font-weight: 300;
+    font-size: 2.25rem;
 }
 
 .row-item {
-  width: 210px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  color: var(--clr-light);
-  font-weight: 300;
-  font-size: 2.25rem;
+    width: 210px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: var(--clr-light);
+    font-weight: 300;
+    font-size: 2.25rem;
 }
 
 /* .item-1 {
@@ -134,27 +134,37 @@ body {
 } */
 
 .item-2 {
-  background-image: url(../../images/posty-image.jpg);
-  background-size: cover;
-  font-weight: bold;
+    background-image: url(../../images/posty-image.jpg);
+    background-size: cover;
+    font-weight: bold;
 }
 
 .item-3 {
-  background-image: url(../../images/qaixx-image.jpg);
-  background-size: cover;
-  font-weight: bold;
+    background-image: url(../../images/qaixx-image.jpg);
+    background-size: cover;
+    font-weight: bold;
 }
 
 .item-4 {
-  background-image: url(../../images/albin-image.jpg);
-  background-size: cover;
-  font-weight: bold;
+    background-image: url(../../images/albin-image.jpg);
+    background-size: cover;
+    font-weight: bold;
 }
 
 .item-5 {
-  background-image: url(../../images/trausi-image.png);
-  background-size: cover;
-  font-weight: bold;
+    background-image: url(../../images/trausi-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+}
+
+.item-6 {
+    background-image: url(../../images/deathwingua-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
 }
 
 /* .item-6 {
@@ -173,7 +183,9 @@ body {
 .posty-image,
 .qaixx-image,
 .albin-image,
-.trausi-image {
-  text-decoration: none;
-  color: aliceblue;
+.trausi-image,
+.deathwingua-image
+{
+    text-decoration: none;
+    color: aliceblue;
 }

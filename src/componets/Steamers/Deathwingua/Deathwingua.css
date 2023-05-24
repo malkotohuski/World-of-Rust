@@ -1,0 +1,41 @@
+.container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .image-container {
+    margin: 20px 0;
+  }
+  
+  img {
+    max-width: 300px;
+    border-radius: 50%;
+  }
+  
+  .section {
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value (0.6) to make it more or less see-through */
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .section h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .section p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    text-align: left;
+    margin-left: 40px;
+  }
+  
+  a {
+    color: #007bff;
+  }
+  
