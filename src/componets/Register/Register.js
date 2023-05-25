@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './Register.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -21,8 +22,16 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can add your register logic here
-    console.log(`Name: ${name}, Email: ${email}, Password: ${password}`);
+    // Save registration data to localStorage
+    const token = 'your_token_here';
+
+    localStorage.setItem('token', token);
+    localStorage.setItem('name', name);
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+
+    // Redirect to "/"
+    navigate('/');
   };
 
   return (
