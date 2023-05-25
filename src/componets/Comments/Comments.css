@@ -1,0 +1,21 @@
+.comments-container {
+    display: flex;
+  }
+  
+  .comment-input {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .comment-list {
+    flex: 1;
+  }
+  
+  .comment {
+    margin-bottom: 10px;
+  }
+  
+  .comment button {
+    margin-left: 10px;
+  }
+  

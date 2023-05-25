@@ -12,12 +12,12 @@ function Home() {
         // Clear the stored token and email from localStorage or sessionStorage
         localStorage.removeItem('token');
         localStorage.removeItem('email');
+        localStorage.removeItem('name');
         // Redirect to the login page after logout
         history('/');
     };
 
-    const email = localStorage.getItem('email');
-
+    const name = localStorage.getItem('name');
     const isLoggedIn = !!localStorage.getItem('token');
 
     const onClickHandler = () => {
@@ -27,8 +27,7 @@ function Home() {
         <body>
             <div className="Container">
                 <section>
-                    <div className="heading-1"><h2>Welcome to the world of Rust
-                        {isLoggedIn && <p>{email}</p>}
+                    <div className="heading-1"><h2>Welcome to the world of Rust {isLoggedIn && <h2>{name}</h2>}
                         {isLoggedIn && <button onClick={handleLogout}>Logout</button>}
                     </h2>
                         <FontAwesomeIcon icon="fa-solid fa-gun" /></div>

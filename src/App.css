@@ -10,6 +10,20 @@
   --clr-yellow: #facc15;
 }
 
+#main-page {
+  min-height: calc(100vh - 80px); /* Subtracting the height of the navbar */
+  padding-bottom: 60px; /* Height of the footer */
+  position: relative;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the desired height of the footer */
+  background-color: #f2f2f2; /* Customize the background color */
+}
+
 
 *,
 *::before,

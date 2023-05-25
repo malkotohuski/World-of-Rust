@@ -7,7 +7,9 @@
 
 }
 
-
+h2 {
+    font-weight: bold !important;
+}
 
 *,
 *::before,
@@ -73,7 +75,7 @@ body {
     line-height: 1.5;
     word-spacing: 1.4px;
     color: var(--clr-dark);
-    background-color: var(--clr-light);
+    background-color: var(--clr-light); 
 
 }
 
@@ -184,8 +186,7 @@ body {
 .qaixx-image,
 .albin-image,
 .trausi-image,
-.deathwingua-image
-{
+.deathwingua-image {
     text-decoration: none;
     color: aliceblue;
 }
