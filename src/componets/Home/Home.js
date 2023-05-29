@@ -28,7 +28,7 @@ function Home() {
             <div className="Container">
                 <section>
                     <div className="heading-1"><h2>Welcome to the world of Rust {isLoggedIn && <h2>{name}</h2>}
-                        {isLoggedIn && <button onClick={handleLogout}>Logout</button>}
+                        {isLoggedIn && <button className="button_logout" onClick={handleLogout}>Logout</button>}
                     </h2>
                         <FontAwesomeIcon icon="fa-solid fa-gun" /></div>
 

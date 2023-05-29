@@ -75,7 +75,7 @@ body {
     line-height: 1.5;
     word-spacing: 1.4px;
     color: var(--clr-dark);
-    background-color: var(--clr-light); 
+    background-color: var(--clr-light);
 
 }
 
@@ -190,3 +190,20 @@ body {
     text-decoration: none;
     color: aliceblue;
 }
+
+.button_logout {
+    padding: 0.2em 0.5em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+
