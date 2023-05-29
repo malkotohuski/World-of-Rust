@@ -8,4 +8,22 @@
   .container-url{
     display: flex;
   }
+
+  .url-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
   
+  .url-item {
+    width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .url-preview {
+    margin-bottom: 10px;
+  }
+  
+  .url-link {
+    text-align: center;
+  }
