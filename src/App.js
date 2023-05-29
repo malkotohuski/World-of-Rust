@@ -19,6 +19,7 @@ import Comments from './componets/Comments/Comments';
 import Barcode from 'react-barcode';
 import AboutUs from './componets/About/About';
 import { Search } from '@mui/icons-material';
+import Clips from './componets/Clips/Clips';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route path="/deathwingua" element={<Deathwingua />} />
 
             <Route path="/deathwingua/comments" element={<Comments />} />
+            <Route path="/deathwingua/clips" element={<Clips />} />
           </Routes>
         </main>
         <Footer />

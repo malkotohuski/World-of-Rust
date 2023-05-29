@@ -4,7 +4,6 @@ import DeathwinguaImage from '../../../images/deathwingua-image.jpg';
 import { useNavigate } from 'react-router-dom';
 
 function Deathwingua() {
-
     const navigate = useNavigate();
 
     const handleAddComment = () => {
@@ -20,6 +19,8 @@ function Deathwingua() {
         // Handle adding a comment logic here
         // You can implement the functionality to add a comment
         // based on your requirements or use case.
+
+        navigate('/deathwingua/clips')
         console.log('Add Video clicked');
     };
 
