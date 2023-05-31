@@ -136,6 +136,14 @@ svg {
   max-width: 100%;
 }
 
+.button-comments{
+  background-color: crimson;;
+}
+
+.button-video{
+  background-color: crimson;
+}
+
 /* For Mobile */
 @media screen and (max-width: 1080px) {
   .view {

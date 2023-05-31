@@ -1,9 +1,29 @@
 import React from 'react';
 import './Qaixx';
-import qaixxImage from '../../../images/qaixx-image.jpg' 
-
+import qaixxImage from '../../../images/qaixx-image.jpg'
+import { useNavigate } from 'react-router-dom';
 
 function Qaixx() {
+  const navigate = useNavigate();
+
+  const handleAddComment = () => {
+    // Handle adding a comment logic here
+    // You can implement the functionality to add a comment
+    // based on your requirements or use case.
+
+    navigate('/posty/comments');
+    console.log('Add Comment clicked');
+  };
+
+  const handleAddVideo = () => {
+    // Handle adding a comment logic here
+    // You can implement the functionality to add a comment
+    // based on your requirements or use case.
+    navigate('/posty/clips');
+    console.log('Add Video clicked');
+
+  };
+
   return (
     <div className='container'>
       <h1>Qaixx - Rust Streamer</h1>
@@ -27,6 +47,8 @@ function Qaixx() {
         <li>Twitter: <a href="https://twitter.com/qaixxxx?lang=bg" target="_blank" rel="noopener noreferrer">@qaixx</a></li>
         <li>YouTube: <a href="https://www.youtube.com/qaixx" target="_blank" rel="noopener noreferrer">Qaixx's YouTube Channel</a></li>
       </ul>
+      <button className='button-comments' onClick={handleAddComment}>Comments</button>
+      <button className='button-video' onClick={handleAddVideo}>Clips </button>
     </div>
   );
 }
