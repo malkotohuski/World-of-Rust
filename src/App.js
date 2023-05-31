@@ -38,11 +38,22 @@ function App() {
             <Route exact path="/search" element={<Search />} />
 
             <Route path="/posty" element={<Posty />} />
-            <Route path="/albin" element={<Albin />} />
-            <Route path="/qaixx" element={<Qaixx />} />
-            <Route path="/trausi" element={<Trausi />} />
-            <Route path="/deathwingua" element={<Deathwingua />} />
+            <Route path="/posty/comments" element={<Comments />} />
+            <Route path="/posty/clips" element={<Clips />} />
 
+            <Route path="/albin" element={<Albin />} />
+            <Route path="/albin/comments" element={<Comments />} />
+            <Route path="/albin/clips" element={<Clips />} />
+
+            <Route path="/qaixx" element={<Qaixx />} />
+            <Route path="/qaixx/comments" element={<Comments />} />
+            <Route path="/qaixx/clips" element={<Clips />} />
+
+            <Route path="/trausi" element={<Trausi />} />
+            <Route path="/trausi/comments" element={<Comments />} />
+            <Route path="/trausi/clips" element={<Clips />} />
+
+            <Route path="/deathwingua" element={<Deathwingua />} />
             <Route path="/deathwingua/comments" element={<Comments />} />
             <Route path="/deathwingua/clips" element={<Clips />} />
           </Routes>

@@ -11,7 +11,7 @@ function Posty() {
         // You can implement the functionality to add a comment
         // based on your requirements or use case.
 
-        navigate('/deathwingua/comments');
+        navigate('/posty/comments');
         console.log('Add Comment clicked');
     };
 
@@ -19,6 +19,7 @@ function Posty() {
         // Handle adding a comment logic here
         // You can implement the functionality to add a comment
         // based on your requirements or use case.
+        navigate('/posty/clips');
         console.log('Add Video clicked');
 
     };
@@ -47,8 +48,8 @@ function Posty() {
                 <li>Twitter: <a href="https://twitter.com/postyofficial?lang=bg" target="_blank" rel="noopener noreferrer">@posty</a></li>
                 <li>YouTube: <a href="https://www.youtube.com/posty" target="_blank" rel="noopener noreferrer">Posty's YouTube Channel</a></li>
             </ul>
-            <button onClick={handleAddComment}>Comments</button>
-            <button onClick={handleAddVideo}>Clips </button>
+            <button className='button-comments' onClick={handleAddComment}>Comments</button>
+            <button className='button-video' onClick={handleAddVideo}>Clips </button>
         </div>
     );
 }

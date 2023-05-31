@@ -48,8 +48,8 @@ function Deathwingua() {
                 <li>Twitter: <a href="https://twitter.com/deathwingua" target="_blank" rel="noopener noreferrer">@Deathwingua</a></li>
                 <li>YouTube: <a href="https://www.youtube.com/deathwingua" target="_blank" rel="noopener noreferrer">Deathwing's YouTube Channel</a></li>
             </ul>
-            <button onClick={handleAddComment}>Comments</button>
-            <button onClick={handleAddVideo}>Clips </button>
+            <button className='button-comments' onClick={handleAddComment}>Comments</button>
+            <button className='button-video' onClick={handleAddVideo}>Clips </button>
         </div>
     );
 }
