@@ -169,6 +169,31 @@ body {
     font-weight: bold;
 }
 
+.item-7 {
+    background-image: url(../../images/hjune-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+}
+
+.item-8 {
+    background-image: url(../../images/root9r-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+}
+
+.item-9 {
+    background-image: url(../../images/coco-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+}
+
+
 /* .item-6 {
   background-color: var(--clr-pink);
 
@@ -186,7 +211,10 @@ body {
 .qaixx-image,
 .albin-image,
 .trausi-image,
-.deathwingua-image {
+.deathwingua-image,
+.hJune-image,
+.r00t9r-image,
+.coco-image {
     text-decoration: none;
     color: aliceblue;
 }
@@ -205,5 +233,3 @@ body {
     -webkit-user-select: none;
     touch-action: manipulation;
 }
-
-
