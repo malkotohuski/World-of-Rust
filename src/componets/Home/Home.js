@@ -74,6 +74,21 @@ function Home() {
                             </div>
                             <Link to='/deathwingua ' className="deathwingua-image" onClick={onClickHandler}>Deathwingua</Link>
                         </div>
+                        <div className="item item-7">
+                            <div className="hJune-rust">
+                            </div>
+                            <Link to='/hJune ' className="hJune-image" onClick={onClickHandler}>hJune</Link>
+                        </div>
+                        <div className="item item-8">
+                            <div className="r00t9r-rust">
+                            </div>
+                            <Link to='/r00t9r ' className="r00t9r-image" onClick={onClickHandler}>r00t9r</Link>
+                        </div>
+                        <div className="item item-9">
+                            <div className="CoconutB-rust">
+                            </div>
+                            <Link to='/CoconutB ' className="coco-image" onClick={onClickHandler}>CoconutB</Link>
+                        </div>
 
                         {/* <div className="row-item item-6"></div> */}
                     </div>
