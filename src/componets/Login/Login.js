@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
@@ -44,7 +44,7 @@ const Login = () => {
                 <input type="password" value={password} onChange={handlePasswordChange} />
             </label>
             <button type="submit" className="login-button">Login</button>
-            <p>Don't have an account? <a href="/register">Sign up</a></p>
+            <p>Don't have an account? <Link to="/register">Sign up</Link></p>
         </form>
     );
 };

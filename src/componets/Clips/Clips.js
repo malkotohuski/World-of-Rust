@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Dropzone from 'react-dropzone';
 import './Clips.css';
+import { useNavigate } from 'react-router-dom';
 
 const Clips = () => {
-    const [uploadedFiles, setUploadedFiles] = useState([]);
+  const [uploadedFiles, setUploadedFiles] = useState([]);
   const [uploadedUrls, setUploadedUrls] = useState([]);
   const [urlInput, setUrlInput] = useState('');
+
+  const navigate = useNavigate();
 
   const handleDrop = async (acceptedFiles) => {
     const formData = new FormData();
@@ -49,7 +52,8 @@ const Clips = () => {
           value={urlInput}
           onChange={(event) => setUrlInput(event.target.value)}
         />
-        <button onClick={handleUrlUpload}>Upload URL</button>
+        <button className='button-url' onClick={handleUrlUpload}>Upload URL</button>
+        <button className='back-button' onClick={() => navigate(-1)}>Back</button>
       </div>
       {uploadedFiles.length > 0 && (
         <div>

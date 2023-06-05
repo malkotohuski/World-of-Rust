@@ -216,7 +216,7 @@ body {
 .r00t9r-image,
 .coco-image {
     text-decoration: none;
-    color: aliceblue;
+    color: aliceblue !important;
 }
 
 .button_logout {

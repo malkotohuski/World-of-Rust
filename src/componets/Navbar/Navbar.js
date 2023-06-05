@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import React, { useState } from 'react';
 
 
@@ -19,7 +19,7 @@ function NavScrollExample() {
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="/">Home</Navbar.Brand>
+                <Navbar.Brand> <Link to="/">Home</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -27,16 +27,20 @@ function NavScrollExample() {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="/contacts">Contact us</Nav.Link>
-                        <Nav.Link href="/about">About us</Nav.Link>
+                        <Nav.Link>
+                            <Link to="/contacts">Contact us</Link>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <Link to="/about">About us</Link>
+                        </Nav.Link>
                         <NavDropdown title="Welcome" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-                            <NavDropdown.Item href="/register">
-                                Register
+                            <NavDropdown.Item>
+                                <Link to="/login">Login</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item> <Link to="/register">Register</Link>
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">
-                                Have problem !
+                            <NavDropdown.Item> <Link to="#action5">Have problem !</Link>
                             </NavDropdown.Item>
                         </NavDropdown>
                         {/* <Nav.Link href="#" disabled>
@@ -60,6 +64,6 @@ function NavScrollExample() {
     );
 };
 
-   
+
 
 export default NavScrollExample;
