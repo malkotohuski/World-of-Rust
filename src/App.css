@@ -113,7 +113,8 @@ a {
   outline: 0;
   background: none;
   text-transform: capitalize;
-  color: inherit;
+  color: #353e63 !important;
+  text-decoration: none !important;
 }
 
 img {

@@ -27,3 +27,8 @@
   .url-link {
     text-align: center;
   }
+
+  .button-url{
+    background-color: #0066cc;
+    color: aliceblue;
+  }

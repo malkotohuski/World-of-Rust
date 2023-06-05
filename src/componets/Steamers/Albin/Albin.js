@@ -23,6 +23,16 @@ function Albin() {
         navigate('/albin/clips')
         console.log('Add Video clicked');
     };
+
+    const handleBackToHomePage = () => {
+        // Handle adding a comment logic here
+        // You can implement the functionality to add a comment
+        // based on your requirements or use case.
+
+        navigate('/');
+        console.log('Back button clicked');
+    };
+
     return (
         <div className='container'>
             <h1>Albin - Rust Streamer</h1>
@@ -48,6 +58,7 @@ function Albin() {
             </ul>
             <button className='button-comments' onClick={handleAddComment}>Comments</button>
             <button className='button-video' onClick={handleAddVideo}>Clips </button>
+            <button className='button-video' onClick={handleBackToHomePage}>Back</button>
         </div>
     );
 }

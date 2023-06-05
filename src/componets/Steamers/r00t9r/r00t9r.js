@@ -24,6 +24,16 @@ function R00t9r() {
 
   };
 
+  const handleBackToHomePage = () => {
+    // Handle adding a comment logic here
+    // You can implement the functionality to add a comment
+    // based on your requirements or use case.
+
+    navigate('/');
+    console.log('Back button clicked');
+};
+
+
   return (
     <div className='container'>
       <h1>r00t9r - Rust Streamer</h1>
@@ -49,6 +59,7 @@ function R00t9r() {
       </ul>
       <button className='button-comments' onClick={handleAddComment}>Comments</button>
       <button className='button-video' onClick={handleAddVideo}>Clips </button>
+      <button className='button-video' onClick={handleBackToHomePage}>Back</button>
     </div>
   );
 }

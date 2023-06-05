@@ -23,6 +23,16 @@ function HJune() {
         navigate('/hJune/clips')
         console.log('Add Video clicked');
     };
+
+    const handleBackToHomePage = () => {
+        // Handle adding a comment logic here
+        // You can implement the functionality to add a comment
+        // based on your requirements or use case.
+
+        navigate('/');
+        console.log('Back button clicked');
+    };
+
     return (
         <div className='container'>
             <h1>hJune - Rust Streamer</h1>
@@ -47,7 +57,8 @@ function HJune() {
                 <li>YouTube: <a href="https://www.youtube.com/c/hJune" target="_blank" rel="noopener noreferrer">hJune's YouTube Channel</a></li>
             </ul>
             <button className='button-comments' onClick={handleAddComment}>Comments</button>
-            <button className='button-video' onClick={handleAddVideo}>Clips </button>
+            <button className='button-video' onClick={handleAddVideo}>Clips</button>
+            <button className='button-video' onClick={handleBackToHomePage}>Back</button>
         </div>
     );
 }
