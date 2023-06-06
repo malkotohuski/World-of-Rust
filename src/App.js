@@ -23,6 +23,8 @@ import Barcode from 'react-barcode';
 import AboutUs from './componets/About/About';
 import { Search } from '@mui/icons-material';
 import Clips from './componets/Clips/Clips';
+import ForgotPassword from './componets/ForgotPassword/ForgotPassword';
+import PasswordResetSuccess from './componets/ForgotPassword/PasswordResetSuccess';
 
 function App() {
     return (
@@ -39,6 +41,8 @@ function App() {
                         <Route path="/barcode" element={<Barcode />} />
                         <Route path="/about" element={<AboutUs />} />
                         <Route exact path="/search" element={<Search />} />
+                        <Route path='forgot-password' element={<ForgotPassword />} />
+                        <Route path="/password-reset-seccess" element={<PasswordResetSuccess />} />
 
                         <Route path="/posty" element={<Posty />} />
                         <Route path="/posty/comments" element={<Comments />} />

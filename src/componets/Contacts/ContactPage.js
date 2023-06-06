@@ -15,6 +15,7 @@ const ContactPage = () => {
         name,
         email,
         message,
+        recipient: 'malkotohuski@gmail.com' // Specify the recipient email address here
       });
 
       console.log(response.data); // Optional: Handle server response
@@ -46,10 +47,10 @@ const ContactPage = () => {
           </label>
         </div>
         <div className='massage-row'>
-        <label>
-          Message:
-          <textarea value={message} onChange={(event) => setMessage(event.target.value)} />
-        </label>
+          <label>
+            Message:
+            <textarea value={message} onChange={(event) => setMessage(event.target.value)} />
+          </label>
         </div>
         <button type="submit">Submit</button>
       </form>
