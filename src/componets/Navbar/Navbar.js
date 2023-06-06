@@ -40,7 +40,7 @@ function NavScrollExample() {
                             <NavDropdown.Item> <Link to="/register">Register</Link>
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item> <Link to="#action5">Have problem !</Link>
+                            <NavDropdown.Item> <Link to="/contacts">Have problem !</Link>
                             </NavDropdown.Item>
                         </NavDropdown>
                         {/* <Nav.Link href="#" disabled>

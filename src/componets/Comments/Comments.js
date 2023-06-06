@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Comments.css'; // Import CSS file for styling
 import { useNavigate } from 'react-router-dom';
 
-
 const Comments = () => {
   const [comment, setComment] = useState('');
   const [commentsArray, setCommentsArray] = useState([]); // Array to store comments
@@ -27,22 +26,14 @@ const Comments = () => {
     setCommentsArray(updatedComments);
   };
 
- /*  const handleBackToPrevPage = () => {
-    // Handle adding a comment logic here
-    // You can implement the functionality to add a comment
-    // based on your requirements or use case.
-
-    console.log('Back button clicked');
-  }; */
-
   return (
     <div className="comments-container">
       <div className="comment-input">
         <h1>{name}</h1>
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className='comment-field'>
             Comment:
-            <textarea value={comment} onChange={handleCommentChange} />
+            <textarea className='text-area' value={comment} onChange={handleCommentChange} />
           </label>
           <button type="submit">Submit</button>
           <button className='back-button' onClick={() => navigate(-1)}>Back</button>
@@ -51,11 +42,11 @@ const Comments = () => {
       <div className="comment-list">
         {/* Render all comments in separate fields */}
         {commentsArray.map((item, index) => (
-          <div key={index} className="comment">
+          <div key={index} className="add-comment">
             <h2>{item.name}</h2>
-            <p>{item.comment}</p>
+            <textarea className='new-text' value={item.comment} disabled={true} />
             {item.name === name && (
-              <button onClick={() => handleDelete(index)}>Delete</button>
+              <button className='delete-button' onClick={() => handleDelete(index)}>Delete</button>
             )}
           </div>
         ))}
