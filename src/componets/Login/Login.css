@@ -40,6 +40,11 @@
     cursor: pointer;
     transition: all 0.3s ease;
   }
+
+  .login-form a{
+    color: #2c3e50;
+    font-weight: bold;
+  }
   
   .login-button:hover {
     transform: translateY(-2px);
