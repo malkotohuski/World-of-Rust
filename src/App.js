@@ -9,6 +9,9 @@ import Register from './componets/Register/Register';
 import NotFound from './componets/NotFound/NotFound';
 import Footer from './componets/Footer/Footer';
 
+import ServersEU from './componets/Servers/ServersEU';
+import VanillaEU from './componets/Servers/Vanilla/VanillaEU';
+
 import Posty from './componets/Steamers/Posty/Posty';
 import Albin from './componets/Steamers/Albin/Albin';
 import Qaixx from './componets/Steamers/Qaixx/Qaixx';
@@ -25,6 +28,7 @@ import { Search } from '@mui/icons-material';
 import Clips from './componets/Clips/Clips';
 import ForgotPassword from './componets/ForgotPassword/ForgotPassword';
 import PasswordResetSuccess from './componets/ForgotPassword/PasswordResetSuccess';
+
 
 function App() {
     return (
@@ -43,6 +47,9 @@ function App() {
                         <Route exact path="/search" element={<Search />} />
                         <Route path='forgot-password' element={<ForgotPassword />} />
                         <Route path="/password-reset-seccess" element={<PasswordResetSuccess />} />
+
+                        <Route path="/serversEU" element={<ServersEU />} />
+                        <Route path="/serversEU/vanillaEU" element={<VanillaEU />} />
 
                         <Route path="/posty" element={<Posty />} />
                         <Route path="/posty/comments" element={<Comments />} />
