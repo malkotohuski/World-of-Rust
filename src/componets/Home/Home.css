@@ -116,7 +116,7 @@ body {
     font-weight: bold;
     font-size: 2.5rem;
     position: relative; /* Enable positioning of the title */
-    width: 280px; /* Set the width to twice the size */
+    width: 273; /* Set the width to twice the size */
     height: 170px; /* Set the height to twice the size */
     border-radius: 20px;
   }
