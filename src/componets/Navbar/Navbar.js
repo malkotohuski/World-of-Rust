@@ -33,6 +33,13 @@ function NavScrollExample() {
                         <Nav.Link>
                             <Link to="/about">About us</Link>
                         </Nav.Link>
+                        <NavDropdown title="Servers" id="navbarScrollingDropdown">
+                            <NavDropdown.Item>
+                                <Link to="/serversEU">Top EU servers</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item> <Link to="/serversUS">Top US servers</Link>
+                            </NavDropdown.Item>
+                        </NavDropdown>
                         <NavDropdown title="Welcome" id="navbarScrollingDropdown">
                             <NavDropdown.Item>
                                 <Link to="/login">Login</Link>

@@ -1,0 +1,112 @@
+#headline-4-5521 {
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.15;
+    text-align: center;
+}
+
+
+
+.h2, .h3, .h4, .h5, .h6 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 38px;
+    color: #4e46e6;
+}
+
+.ct-section-inner-wrap {
+    background-color: #11151c;
+}
+
+.comment-body .aligncenter, .oxy-stock-content-styles .aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-block-image.aligncenter, .wp-block-image .aligncenter, .wp-block-image.alignleft, .wp-block-image .alignleft, .wp-block-image.alignright, .wp-block-image .alignright {
+    display: table;
+}
+
+.wp-block-image figure {
+     margin: 0; 
+}
+
+figure {
+    max-width: 100%;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+.wp-block-buttons.wp-container-1, .wp-block-buttons.wp-container-2 {
+    justify-content: center;
+}
+
+.wp-block-buttons>.wp-block-button {
+    display: inline-block;
+    margin: 0;
+}
+
+.wp-block-button.no-border-radius, .wp-block-button__link.no-border-radius {
+    border-radius: 0!important;
+}
+
+.has-luminous-vivid-amber-background-color {
+    background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+}
+
+.has-black-color {
+    color: var(--wp--preset--color--black) !important;
+}
+
+.wp-block-button__link {
+    color: #fff;
+    background-color: #32373c;
+    border-radius: 9999px;
+    box-shadow: none;
+    text-decoration: none;
+    padding: calc(0.667em + 2px) calc(1.333em + 2px);
+    font-size: 1.125em;
+}
+
+.wp-element-button {
+    cursor: pointer;
+}
+
+.wp-block-button__link {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    word-break: break-word;
+    box-sizing: border-box;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+body .is-layout-flex {
+    display: flex;
+}
+
+body .is-layout-flex {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+body {
+    --wp--preset--color--luminous-vivid-amber: #fcb900;
+}
+
+ul li::marker {
+    font-size: 150%;
+    content: "🧡 ";
+  }
+
+  .vanilla-text {
+    color: #39ccdd !important;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-transform: none;
+}
