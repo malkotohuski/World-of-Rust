@@ -11,7 +11,7 @@
     font-size: 2em;
     font-weight: 700;
     line-height: 38px;
-    color: #4e46e6;
+    color: #4e46e6 ;
 }
 
 .ct-section-inner-wrap {
@@ -29,6 +29,19 @@
 
 .wp-block-image figure {
      margin: 0; 
+}
+
+.wp-block-image img {
+    margin: 1em 0 0;
+    box-shadow: 3px 3px 20px 0 rgba(0,0,0,.2);
+}
+
+.wp-block-image.has-custom-border img, .wp-block-image img {
+    box-sizing: border-box;
+}
+
+.comment-body img, .oxy-stock-content-styles img {
+    max-width: 100%;
 }
 
 figure {
@@ -110,3 +123,16 @@ ul li::marker {
     word-wrap: break-word;
     text-transform: none;
 }
+
+.RustVikings{
+    color: #4e46e6;
+}
+
+.rustVikingsText{
+    color: #39ccdd !important;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-transform: none;
+}
+
+

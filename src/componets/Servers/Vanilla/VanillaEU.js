@@ -10,7 +10,7 @@ function VanillaEU() {
                 <div>
                     <h1 id="headline-4-5521" className="ct-headline c-margin-top-s c-margin-bottom-s c-h2">
                         <span id="10_Best_Vanilla_Rust_Servers"></span>
-                        <span id="span-5-5521" className="ct-span" style={{ color: "black" }}>10 BEST VANILLA RUST SERVERS</span>
+                        <span id="span-5-5521" className="ct-span" style={{ color: "black" }}>BEST VANILLA RUST SERVERS</span>
                     </h1>
                 </div>
             </section>
@@ -64,16 +64,37 @@ function VanillaEU() {
                                     </ul>
                                     <p style={{ color: "white" }}>
                                         <strong>GhostCap Gaming Vanilla Rust Server IP: </strong>
-                                         95.214.180.58:28015
+                                        95.214.180.58:28015
                                     </p>
                                     <p style={{ color: "white" }}>
                                         <strong>GhostCap Gaming Website:</strong>
-                                            <a className="vanilla-text" href="https://www.ghostcap.com/"> https://www.ghostcap.com/</a>
-                                        </p>
-                                        <p style={{ color: "white" }}>
-                                            <strong>GhostCap Gaming Discord:</strong>
-                                            <a className="vanilla-text" href="https://discord.ghostcap.com/" target="_blank" rel="noreferrer"> https://discord.ghostcap.com/</a>
-                                        </p>
+                                        <a className="vanilla-text" href="https://www.ghostcap.com/"> https://www.ghostcap.com/</a>
+                                    </p>
+                                    <p style={{ color: "white" }}>
+                                        <strong>GhostCap Gaming Discord:</strong>
+                                        <a className="vanilla-text" href="https://discord.ghostcap.com/" target="_blank" rel="noreferrer"> https://discord.ghostcap.com/</a>
+                                    </p>
+                                    <h3 className="RustVikings">
+                                        <span id="10_RustVikings_SoloDuoTrioQuad_Vanilla_Rust_Server">2. RustVikings | Solo/Duo/Trio/Quad | Vanilla Rust Server</span>
+                                    </h3>
+                                    <figure className="wp-block-embed is-type-video is-provider-yotube wp-block-embed-youtube wp-embed-aspect-19-9 wp-has-aspect-ratio">
+                                        <div className="wp-block-embed__wrapper">
+                                            <iframe title="Welcome To RsutVikings" width={1400} height={320} src="https://www.youtube.com/embed/9FMAvLYZWhI?feature=oembed" frameBorder={0} allow="accelerometer"></iframe>
+                                        </div>
+                                    </figure>
+                                    <p style={{ color: "white" }}>Welcome to RustVikings, a server that offers a fun and engaging Rust experience with fully wiped maps twice a week on Mondays and Fridays (decent map size too)</p>
+                                    <p style={{ color: "white" }}>RustVikings has a variety of custom features and a friendly and active community, making it the perfect place to explore the post-apocalyptic world of Rust.</p>
+                                    <p style={{ color: "white" }}>To ensure that all players have a positive and enjoyable vanilla experience on RustVikings, the server has a set of rules in place. These rules include a group limit of 4, a requirement for English in chat only, and a prohibition on racism, toxicity, cheating, scripting, and exploiting.</p>
+                                    <p style={{ color: "white" }}>EAC alt banned accounts are not allowed on the server, nor are VPNs or proxies. Multiple VAC or game bans, or bans that are less than 365 days old, are also not allowed.</p>
+                                    <p style={{ color: "white" }}>
+                                        <strong>RustVikings Server IP:</strong>
+                                        45.88.230.41:27215 </p>
+                                    <p style={{ color: "white" }}>
+                                        <strong>
+                                            RustVikings Website:
+                                            <a className="rustVikingsText" href="http://rustvikings.com/" target="_blank" rel="noopener"> http://rustvikings.com/</a>
+                                        </strong>
+                                    </p>
                                 </span>
                             </div>
                         </div>
