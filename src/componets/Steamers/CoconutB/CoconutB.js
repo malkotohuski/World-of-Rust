@@ -53,9 +53,9 @@ function CoconutB() {
             <h2>Follow CoconutB</h2>
             <p>Make sure to follow CoconutB on his streaming platforms:</p>
             <ul>
-                <li>Twitch: <a href="https://www.twitch.tv/coconutb" target="_blank" rel="noopener noreferrer">CoconutB</a></li>
-                <li>Twitter: <a href="https://twitter.com/CoconutBGaming" target="_blank" rel="noopener noreferrer">@CoconutB</a></li>
-                <li>YouTube: <a href="https://www.youtube.com/channel/UCnO8ScddtnOC0h--6_lbIUw?view_as=subscriber" target="_blank" rel="noopener noreferrer">CoconutB's YouTube Channel</a></li>
+                <li>Twitch: <a className='twitchInfo' href="https://www.twitch.tv/coconutb" target="_blank" rel="noopener noreferrer">CoconutB</a></li>
+                <li>Twitter: <a className='twitterInfo' href="https://twitter.com/CoconutBGaming" target="_blank" rel="noopener noreferrer">@CoconutB</a></li>
+                <li>YouTube: <a className='youTubeInfo' href="https://www.youtube.com/channel/UCnO8ScddtnOC0h--6_lbIUw?view_as=subscriber" target="_blank" rel="noopener noreferrer">CoconutB's YouTube Channel</a></li>
             </ul>
             <button className='button-comments' onClick={handleAddComment}>Comments</button>
             <button className='button-video' onClick={handleAddVideo}>Clips </button>

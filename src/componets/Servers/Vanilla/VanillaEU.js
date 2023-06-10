@@ -1,5 +1,7 @@
 import React from "react";
 import '../Vanilla/VanillaEU.css';
+import RageQuitImage from '../../../images/rustRageQuit.jpg';
+import RustfieldImage from '../../../images/rustafied.png';
 
 function VanillaEU() {
 
@@ -28,7 +30,7 @@ function VanillaEU() {
                                     <p style={{ color: "white" }}>Are you looking for the best Rust vanilla servers? You're in luck! We've scoured the internet and narrowed down our top picks for you.</p>
                                     <p style={{ color: "white" }}>These ten best vanilla Rust servers stand out for their high-quality gameplay and dedicated communities.</p>
                                     <h3 style={{ color: "#4e46e6" }}>
-                                        <span id="1_GHOSTCAP_VanilaMonthly_WipeJust_WIPED">1. GHOSTCAP Vanilla|Monthly Wipe|JUST WIPED</span>
+                                        <span id="1_GHOSTCAP_VanilaMonthly_WipeJust_WIPED">10. GHOSTCAP Vanilla|Monthly Wipe|JUST WIPED</span>
                                     </h3>
                                     <div className="wp-block-image">
                                         <figure className="aligncenter">
@@ -75,7 +77,7 @@ function VanillaEU() {
                                         <a className="vanilla-text" href="https://discord.ghostcap.com/" target="_blank" rel="noreferrer"> https://discord.ghostcap.com/</a>
                                     </p>
                                     <h3 className="RustVikings">
-                                        <span id="10_RustVikings_SoloDuoTrioQuad_Vanilla_Rust_Server">2. RustVikings | Solo/Duo/Trio/Quad | Vanilla Rust Server</span>
+                                        <span id="9_RustVikings_SoloDuoTrioQuad_Vanilla_Rust_Server">9. RustVikings | Solo/Duo/Trio/Quad | Vanilla Rust Server</span>
                                     </h3>
                                     <figure className="wp-block-embed is-type-video is-provider-yotube wp-block-embed-youtube wp-embed-aspect-19-9 wp-has-aspect-ratio">
                                         <div className="wp-block-embed__wrapper">
@@ -92,7 +94,50 @@ function VanillaEU() {
                                     <p style={{ color: "white" }}>
                                         <strong>
                                             RustVikings Website:
-                                            <a className="rustVikingsText" href="http://rustvikings.com/" target="_blank" rel="noopener"> http://rustvikings.com/</a>
+                                            <a className="rustVikingsText" href="http://rustvikings.com/" target="_blank" rel="noreferrer"> http://rustvikings.com/</a>
+                                        </strong>
+                                    </p>
+                                    <h3 className="RageQuit">
+                                        <span id="9_RageQuit_SoloDuoTrioQuad_Vanilla_Rust_Server">8. RAGEQUIT | Solo/Duo/Trio/Quad | Vanilla Rust Server</span>
+                                    </h3>
+                                    <div className="wp-block-image">
+                                    <figure className="aligncenter">
+                                        <img decoding="async" width={750} height={325} src={RageQuitImage} alt="Rust Vanilla Servers" className="wp-image-4457" ></img>
+                                    </figure>
+                                    </div>
+                                    <p style={{ color: "white" }}>Welcome to RAGEQUIT, a server that offers a fun and engaging Rust experience with fully wiped maps twice a week on Mondays and Fridays (decent map size too)</p>
+                                    <p style={{ color: "white" }}>We try to give you a perfect gaming experience on our servers..</p>
+                                    <p style={{ color: "white" }}>All our server got high FPS, very good DDoS protection, juicy anti cheat plugins and run "vanilla".
+                                        Also our Admin team got more then 15000 hours Rust experience.</p>
+                                    <p style={{ color: "white" }}>There is no pay to win!</p>
+                                    <p style={{ color: "white" }}>
+                                        <strong>RustVikings Server IP:</strong>
+                                        51.195.60.190:28023 </p>
+                                    <p style={{ color: "white" }}>
+                                        <strong>
+                                            RAGEQUIT Discord:
+                                            <a className="rustRageQuit" href="https://discord.gg/sWSwcgb" target="_blank" rel="noreferrer"> https://discord.gg/sWSwcgb </a>
+                                        </strong>
+                                    </p>
+                                    <h3 className="Rustafied">
+                                        <span id="7_Rustafied_Main_Vanilla_Rust_Server">7. Rustafied | MAIN | Vanilla Rust Server</span>
+                                    </h3>
+                                    <div className="wp-block-image">
+                                    <figure className="aligncenter">
+                                        <img decoding="async" width={750} height={325} src={RustfieldImage} alt="Rust Vanilla Servers" className="wp-image-4457" ></img>
+                                    </figure>
+                                    </div>
+                                    <p style={{ color: "white" }}>Welcome to Rustafied, a server that offers a fun and engaging Rust experience with fully wiped maps twice a week on Mondays and Fridays (decent map size too)</p>
+                                    <p style={{ color: "white" }}>The update on the first Thursday of each month is a forced wipe, meaning all servers are required to update/wipe.</p>
+                                    <p style={{ color: "white" }}> Check out our update stream every Thursday starting at 3 PM EST!.</p>
+                                    <p style={{ color: "white" }}>There is no pay to win!</p>
+                                    <p style={{ color: "white" }}>
+                                        <strong>Rustfield Server IP:</strong>
+                                        64.52.81.221:28015 </p>
+                                    <p style={{ color: "white" }}>
+                                        <strong>
+                                            Rustfield Discord:
+                                            <a className="RustafiedText" href="https://discord.com/invite/RcjDEjEDHP" target="_blank" rel="noreferrer"> https://discord.com/invite/RcjDEjEDHP </a>
                                         </strong>
                                     </p>
                                 </span>
