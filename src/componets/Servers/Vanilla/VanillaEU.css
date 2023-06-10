@@ -135,4 +135,25 @@ ul li::marker {
     text-transform: none;
 }
 
+.RageQuit{
+    color: #4e46e6;
+}
+
+.rustRageQuit{
+    color: #39ccdd !important;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-transform: none;
+}
+
+.Rustafied{
+    color: #4e46e6;
+}
+
+.RustafiedText{
+    color: #39ccdd !important;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-transform: none;
+}
 

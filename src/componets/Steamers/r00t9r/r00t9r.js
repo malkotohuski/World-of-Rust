@@ -53,9 +53,9 @@ function R00t9r() {
       <h2>Follow r00t9r</h2>
       <p>Make sure to follow Qaixx on his streaming platforms:</p>
       <ul>
-        <li>Twitch: <a href="https://twitter.com/r00t9r" target="_blank" rel="noopener noreferrer">r00t9r</a></li>
-        <li>Twitter: <a href="https://m.twitch.tv/r00t9r" target="_blank" rel="noopener noreferrer">@r00t9r</a></li>
-        <li>YouTube: <a href="https://www.youtube.com/r00t9rrust" target="_blank" rel="noopener noreferrer">r00t9r's YouTube Channel</a></li>
+        <li>Twitch: <a  className='twitchInfo' href="https://twitter.com/r00t9r" target="_blank" rel="noopener noreferrer">r00t9r</a></li>
+        <li>Twitter: <a className='twitterInfo' href="https://m.twitch.tv/r00t9r" target="_blank" rel="noopener noreferrer">@r00t9r</a></li>
+        <li>YouTube: <a className='youTubeInfo' href="https://www.youtube.com/r00t9rrust" target="_blank" rel="noopener noreferrer">r00t9r's YouTube Channel</a></li>
       </ul>
       <button className='button-comments' onClick={handleAddComment}>Comments</button>
       <button className='button-video' onClick={handleAddVideo}>Clips </button>

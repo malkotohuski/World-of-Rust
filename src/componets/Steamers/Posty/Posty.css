@@ -39,3 +39,9 @@
     color: #007bff;
   }
   
+   .twitchInfo,
+   .twitterInfo,
+   .youTubeInfo {
+    color: #007bff !important;
+   }
+  

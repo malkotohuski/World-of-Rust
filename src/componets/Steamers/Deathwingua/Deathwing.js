@@ -53,9 +53,9 @@ function Deathwingua() {
             <h2>Follow Deathwingua</h2>
             <p>Make sure to follow Deathwing on his streaming platforms:</p>
             <ul>
-                <li>Twitch: <a href="https://www.twitch.tv/deathwingua" target="_blank" rel="noopener noreferrer">Deathwingua</a></li>
-                <li>Twitter: <a href="https://twitter.com/deathwingua" target="_blank" rel="noopener noreferrer">@Deathwingua</a></li>
-                <li>YouTube: <a href="https://www.youtube.com/deathwingua" target="_blank" rel="noopener noreferrer">Deathwing's YouTube Channel</a></li>
+                <li>Twitch: <a  className='twitchInfo' href="https://www.twitch.tv/deathwingua" target="_blank" rel="noopener noreferrer">Deathwingua</a></li>
+                <li>Twitter: <a className='twitterInfo' href="https://twitter.com/deathwingua" target="_blank" rel="noopener noreferrer">@Deathwingua</a></li>
+                <li>YouTube: <a className='youTubeInfo' href="https://www.youtube.com/deathwingua" target="_blank" rel="noopener noreferrer">Deathwing's YouTube Channel</a></li>
             </ul>
             <button className='button-comments' onClick={handleAddComment}>Comments</button>
             <button className='button-video' onClick={handleAddVideo}>Clips </button>

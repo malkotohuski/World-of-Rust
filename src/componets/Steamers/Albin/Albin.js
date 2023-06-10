@@ -52,9 +52,9 @@ function Albin() {
             <h2>Follow Albin</h2>
             <p>Make sure to follow Albin on his streaming platforms:</p>
             <ul>
-                <li>Twitch: <a href="https://www.twitch.tv/albin" target="_blank" rel="noopener noreferrer">albin</a></li>
-                <li>Twitter: <a href="https://twitter.com/albinrust" target="_blank" rel="noopener noreferrer">@albin</a></li>
-                <li>YouTube: <a href="https://www.youtube.com/@albin8819" target="_blank" rel="noopener noreferrer">Albin's YouTube Channel</a></li>
+                <li>Twitch: <a  className='twitchInfo' href="https://www.twitch.tv/albin" target="_blank" rel="noopener noreferrer">albin</a></li>
+                <li>Twitter: <a className='twitterInfo' href="https://twitter.com/albinrust" target="_blank" rel="noopener noreferrer">@albin</a></li>
+                <li>YouTube: <a className='youTubeInfo' href="https://www.youtube.com/@albin8819" target="_blank" rel="noopener noreferrer">Albin's YouTube Channel</a></li>
             </ul>
             <button className='button-comments' onClick={handleAddComment}>Comments</button>
             <button className='button-video' onClick={handleAddVideo}>Clips </button>
