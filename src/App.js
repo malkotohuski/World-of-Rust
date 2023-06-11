@@ -86,8 +86,8 @@ function App() {
         },
         {
             question: "From which monument can you buy a Minicopter?",
-            answers: ["Satellite Dish", "Outpost", "Airfield", "Saturn"],
-            correctAnswerIndex: 1,
+            answers: ["Satellite Dish", "Outpost", "Airfield", "Bandit Camp"],
+            correctAnswerIndex: 4,
         },
         {
             question: "Which planet is known as the Red Planet?",
@@ -113,73 +113,70 @@ function App() {
         // Add more questions here
     ];
 
+    const randomQuestions = questions.slice(0, 14).sort(() => Math.random() - 0.5);
 
     return (
-        <>
-            <div className="App">
-
-                <Navbar />
-                <main id="main-page">
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/contacts" element={<ContactPage />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
-                        <Route path="/*" element={<NotFound />} />
-                        <Route path="/barcode" element={<Barcode />} />
-                        <Route path="/about" element={<AboutUs />} />
-                        <Route exact path="/search" element={<Search />} />
-                        <Route path='forgot-password' element={<ForgotPassword />} />
-                        <Route path="/password-reset-seccess" element={<PasswordResetSuccess />} />
-                        {questions.map((question, index) => (
-                            <Route
-                                key={index}
-                                path={`/question/${index + 1}`}
-                                element={<Question question={question} questionIndex={index} questions={questions} />}
-                            />
-                        ))}
-
-
-                        <Route path="/serversEU" element={<ServersEU />} />
-                        <Route path="/serversEU/vanillaEU" element={<VanillaEU />} />
-
-                        <Route path="/posty" element={<Posty />} />
-                        <Route path="/posty/comments" element={<Comments />} />
-                        <Route path="/posty/clips" element={<Clips />} />
-
-                        <Route path="/albin" element={<Albin />} />
-                        <Route path="/albin/comments" element={<Comments />} />
-                        <Route path="/albin/clips" element={<Clips />} />
-
-                        <Route path="/qaixx" element={<Qaixx />} />
-                        <Route path="/qaixx/comments" element={<Comments />} />
-                        <Route path="/qaixx/clips" element={<Clips />} />
-
-                        <Route path="/trausi" element={<Trausi />} />
-                        <Route path="/trausi/comments" element={<Comments />} />
-                        <Route path="/trausi/clips" element={<Clips />} />
-
-                        <Route path="/deathwingua" element={<Deathwingua />} />
-                        <Route path="/deathwingua/comments" element={<Comments />} />
-                        <Route path="/deathwingua/clips" element={<Clips />} />
-
-                        <Route path="/hJune" element={<HJune />} />
-                        <Route path="/hJune/comments" element={<Comments />} />
-                        <Route path="/hJune/clips" element={<Clips />} />
-
-                        <Route path="/r00t9r" element={<R00t9r />} />
-                        <Route path="/r00t9r/comments" element={<Comments />} />
-                        <Route path="/r00t9r/clips" element={<Clips />} />
-
-                        <Route path="/CoconutB" element={<CoconutB />} />
-                        <Route path="/CoconutB/comments" element={<Comments />} />
-                        <Route path="/CoconutB/clips" element={<Clips />} />
-                    </Routes>
-                </main>
-                <Footer />
-            </div>
-        </>
+      <>
+        <div className="App">
+          <Navbar />
+          <main id="main-page">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contacts" element={<ContactPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/*" element={<NotFound />} />
+              <Route path="/barcode" element={<Barcode />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route exact path="/search" element={<Search />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/password-reset-success" element={<PasswordResetSuccess />} />
+              {randomQuestions.map((question, index) => (
+                <Route
+                  key={index}
+                  path={`/question/${index + 1}`}
+                  element={<Question question={question} questionIndex={index} randomQuestions={randomQuestions} />}
+                />
+              ))}
+              <Route path="/serversEU" element={<ServersEU />} />
+              <Route path="/serversEU/vanillaEU" element={<VanillaEU />} />
+              <Route path="/posty" element={<Posty />} />
+              <Route path="/posty/comments" element={<Comments />} />
+              <Route path="/posty/clips" element={<Clips />} />
+              <Route path="/albin" element={<Albin />} />
+              <Route path="/albin/comments" element={<Comments />} />
+              <Route path="/albin/clips" element={<Clips />} />
+              <Route path="/qaixx" element={<Qaixx />} />
+              <Route path="/qaixx/comments" element={<Comments />} />
+              <Route path="/qaixx/clips" element={<Clips />} />
+              <Route path="/trausi" element={<Trausi />} />
+              <Route path="/trausi/comments" element={<Comments />} />
+              <Route path="/trausi/clips" element={<Clips />} />
+              <Route path="/deathwingua" element={<Deathwingua />} />
+              <Route path="/deathwingua/comments" element={<Comments />} />
+              <Route path="/deathwingua/clips" element={<Clips />} />
+              <Route path="/hJune" element={<HJune />} />
+              <Route path="/hJune/comments" element={<Comments />} />
+              <Route path="/hJune/clips" element={<Clips />} />
+              <Route path="/r00t9r" element={<R00t9r />} />
+              <Route path="/r00t9r/comments" element={<Comments />} />
+              <Route path="/r00t9r/clips" element={<Clips />} />
+              <Route path="/coconutB" element={<CoconutB />} />
+              <Route path="/coconutB/comments" element={<Comments />} />
+              <Route path="/coconutB/clips" element={<Clips />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </>
     );
-}
-
-export default App;
+  }
+  
+  export default App;
+ 
+  
+  
+  
+  
+  
+  
