@@ -7,40 +7,52 @@
 
 
 
-.h2, .h3, .h4, .h5, .h6 {
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
     font-size: 2em;
     font-weight: 700;
     line-height: 38px;
-    color: #4e46e6 ;
+    color: #4e46e6;
 }
 
 .ct-section-inner-wrap {
     background-color: #11151c;
 }
 
-.comment-body .aligncenter, .oxy-stock-content-styles .aligncenter {
+.comment-body .aligncenter,
+.oxy-stock-content-styles .aligncenter {
     margin-left: auto;
     margin-right: auto;
 }
 
-.wp-block-image.aligncenter, .wp-block-image .aligncenter, .wp-block-image.alignleft, .wp-block-image .alignleft, .wp-block-image.alignright, .wp-block-image .alignright {
+.wp-block-image.aligncenter,
+.wp-block-image .aligncenter,
+.wp-block-image.alignleft,
+.wp-block-image .alignleft,
+.wp-block-image.alignright,
+.wp-block-image .alignright {
     display: table;
 }
 
 .wp-block-image figure {
-     margin: 0; 
+    margin: 0;
 }
 
 .wp-block-image img {
     margin: 1em 0 0;
-    box-shadow: 3px 3px 20px 0 rgba(0,0,0,.2);
+    box-shadow: 3px 3px 20px 0 rgba(0, 0, 0, .2);
 }
 
-.wp-block-image.has-custom-border img, .wp-block-image img {
+.wp-block-image.has-custom-border img,
+.wp-block-image img {
     box-sizing: border-box;
 }
 
-.comment-body img, .oxy-stock-content-styles img {
+.comment-body img,
+.oxy-stock-content-styles img {
     max-width: 100%;
 }
 
@@ -48,11 +60,14 @@ figure {
     max-width: 100%;
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
     box-sizing: inherit;
 }
 
-.wp-block-buttons.wp-container-1, .wp-block-buttons.wp-container-2 {
+.wp-block-buttons.wp-container-1,
+.wp-block-buttons.wp-container-2 {
     justify-content: center;
 }
 
@@ -61,8 +76,9 @@ figure {
     margin: 0;
 }
 
-.wp-block-button.no-border-radius, .wp-block-button__link.no-border-radius {
-    border-radius: 0!important;
+.wp-block-button.no-border-radius,
+.wp-block-button__link.no-border-radius {
+    border-radius: 0 !important;
 }
 
 .has-luminous-vivid-amber-background-color {
@@ -95,7 +111,8 @@ figure {
     box-sizing: border-box;
 }
 
-b, strong {
+b,
+strong {
     font-weight: bolder;
 }
 
@@ -114,46 +131,45 @@ body {
 
 ul li::marker {
     font-size: 150%;
-    content: "🧡 ";
-  }
+  /*   content: "🧡 "; */
+}
 
-  .vanilla-text {
+.vanilla-text {
     color: #39ccdd !important;
     font-weight: 700;
     word-wrap: break-word;
     text-transform: none;
 }
 
-.RustVikings{
+.RustVikings {
     color: #4e46e6;
 }
 
-.rustVikingsText{
+.rustVikingsText {
     color: #39ccdd !important;
     font-weight: 700;
     word-wrap: break-word;
     text-transform: none;
 }
 
-.RageQuit{
+.RageQuit {
     color: #4e46e6;
 }
 
-.rustRageQuit{
+.rustRageQuit {
     color: #39ccdd !important;
     font-weight: 700;
     word-wrap: break-word;
     text-transform: none;
 }
 
-.Rustafied{
+.Rustafied {
     color: #4e46e6;
 }
 
-.RustafiedText{
+.RustafiedText {
     color: #39ccdd !important;
     font-weight: 700;
     word-wrap: break-word;
     text-transform: none;
 }
-
