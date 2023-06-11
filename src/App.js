@@ -8,6 +8,7 @@ import Login from './componets/Login/Login';
 import Register from './componets/Register/Register';
 import NotFound from './componets/NotFound/NotFound';
 import Footer from './componets/Footer/Footer';
+import Question from './componets/Question/Question';
 
 import ServersEU from './componets/Servers/ServersEU';
 import VanillaEU from './componets/Servers/Vanilla/VanillaEU';
@@ -31,9 +32,92 @@ import PasswordResetSuccess from './componets/ForgotPassword/PasswordResetSucces
 
 
 function App() {
+
+    const questions = [
+        {
+            question: "Which company made the game Rust?",
+            answers: ["Facepunch", "Blizzard", "EA Sport", "Rockstar Games"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "How much wood do you need to make a Tool Cupboard?",
+            answers: ["500", "1000", "750", "100"],
+            correctAnswerIndex: 1,
+        },
+        {
+            question: "How many metal fragments are needed for a Sheet Metal Door?",
+            answers: ["125", "100", "200", "150"],
+            correctAnswerIndex: 3,
+        },
+        {
+            question: "Which of the monuments is not a save zone?",
+            answers: ["Outpost", "Military Tunnels", "Bandit Camp", "Large Barn"],
+            correctAnswerIndex: 1,
+        },
+        {
+            question: "Which of the monuments is a save zone?",
+            answers: ["Airfield", "Harbor", "Large Fishing Village", "Launch Site"],
+            correctAnswerIndex: 2,
+        },
+        {
+            question: "How many locked crates are there on the ship?",
+            answers: ["3", "2", "4", "1"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "How many locked crates are there on a small oil rig?",
+            answers: ["2", "1", "4", "3"],
+            correctAnswerIndex: 1,
+        },
+        {
+            question: "How many locked crates are there on a large oil rig?",
+            answers: ["0", "4", "2", "1"],
+            correctAnswerIndex: 3,
+        },
+        {
+            question: "How many workbenches are there?",
+            answers: ["4", "7", "3", "10"],
+            correctAnswerIndex: 2,
+        },
+        {
+            question: "From which monument can you buy a boat?",
+            answers: ["Fishing Villages", "Water Treatment Plant", " Train Yard", " Oxum’s Gas Station"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "From which monument can you buy a Minicopter?",
+            answers: ["Satellite Dish", "Outpost", "Airfield", "Saturn"],
+            correctAnswerIndex: 1,
+        },
+        {
+            question: "Which planet is known as the Red Planet?",
+            answers: ["Venus", "Mars", "Jupiter", "Saturn"],
+            correctAnswerIndex: 1,
+        },
+        {
+            question: "Which planet is known as the Red Planet?",
+            answers: ["Venus", "Mars", "Jupiter", "Saturn"],
+            correctAnswerIndex: 1,
+        },
+        {
+            question: "Which planet is known as the Red Planet?",
+            answers: ["Venus", "Mars", "Jupiter", "Saturn"],
+            correctAnswerIndex: 1,
+        },
+        {
+            question: "Which planet is known as the Red Planet?",
+            answers: ["Venus", "Mars", "Jupiter", "Saturn"],
+            correctAnswerIndex: 1,
+        },
+
+        // Add more questions here
+    ];
+
+
     return (
         <>
             <div className="App">
+
                 <Navbar />
                 <main id="main-page">
                     <Routes>
@@ -47,6 +131,14 @@ function App() {
                         <Route exact path="/search" element={<Search />} />
                         <Route path='forgot-password' element={<ForgotPassword />} />
                         <Route path="/password-reset-seccess" element={<PasswordResetSuccess />} />
+                        {questions.map((question, index) => (
+                            <Route
+                                key={index}
+                                path={`/question/${index + 1}`}
+                                element={<Question question={question} questionIndex={index} questions={questions} />}
+                            />
+                        ))}
+
 
                         <Route path="/serversEU" element={<ServersEU />} />
                         <Route path="/serversEU/vanillaEU" element={<VanillaEU />} />
