@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import './Question.css';
 
 
-const Question = ({ question, questionIndex, questions }) => {
+const Question = ({ question, questionIndex, randomQuestions }) => {
   const navigate = useNavigate();
 
   const { question: questionText, answers, correctAnswerIndex } = question;
@@ -30,7 +30,7 @@ const Question = ({ question, questionIndex, questions }) => {
     if (index === correctAnswerIndex) {
       setTimeout(() => {
         const nextQuestionIndex = questionIndex + 1;
-        if (nextQuestionIndex < questions.length) {
+        if (nextQuestionIndex < randomQuestions.length) {
           navigate(`/question/${nextQuestionIndex + 1}`);
           if (nextQuestionIndex + 1 === 6) {
             setReachedAmount("Great, you've reached your first sure amount!");
@@ -94,7 +94,7 @@ const Question = ({ question, questionIndex, questions }) => {
         </div>
       )}
     </div>
-    <QuestionTable currentQuestionIndex={questionIndex + 1} totalQuestions={questions.length} />
+    <QuestionTable currentQuestionIndex={questionIndex + 1} totalQuestions={randomQuestions.length} />
   </div>
 );
 };
