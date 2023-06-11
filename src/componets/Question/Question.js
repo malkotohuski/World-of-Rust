@@ -42,7 +42,7 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
         } else {
           navigate('/game-over');
         }
-      }, 3000);
+      }, 1500);
     } else {
       setGameOver(true);
       setReachedAmount('');

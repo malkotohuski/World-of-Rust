@@ -87,7 +87,7 @@ function App() {
         {
             question: "From which monument can you buy a Minicopter?",
             answers: ["Satellite Dish", "Outpost", "Airfield", "Bandit Camp"],
-            correctAnswerIndex: 4,
+            correctAnswerIndex: 3,
         },
         {
             question: "Which planet is known as the Red Planet?",
