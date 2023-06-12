@@ -17,3 +17,6 @@ Streamer bar CoconutB !
 EU servers bar ! 
 ![EU servers bar](https://github.com/malkotohuski/World-of-Rust/assets/115570079/f2bfa6a0-d2a3-46cd-bddc-a2d7b071d60e)
 
+Game Bar !
+![game bar](https://github.com/malkotohuski/World-of-Rust/assets/115570079/01564c5e-4742-4f9d-832b-8404b18e2241)
+
