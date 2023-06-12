@@ -47,7 +47,7 @@ function NavScrollExample() {
                             <NavDropdown.Item> <Link to="/register">Register</Link>
                             </NavDropdown.Item>
                             <NavDropdown.Item>
-                                <Link to="/question/1">I am Rich (Game)</Link>
+                                <Link to="/question">I am Rich (Game)</Link>
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item> <Link to="/contacts">Have problem !</Link>

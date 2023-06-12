@@ -29,6 +29,7 @@ import { Search } from '@mui/icons-material';
 import Clips from './componets/Clips/Clips';
 import ForgotPassword from './componets/ForgotPassword/ForgotPassword';
 import PasswordResetSuccess from './componets/ForgotPassword/PasswordResetSuccess';
+import Game from './componets/Question/Game';
 
 
 function App() {
@@ -38,82 +39,98 @@ function App() {
             question: "Which company made the game Rust?",
             answers: ["Facepunch", "Blizzard", "EA Sport", "Rockstar Games"],
             correctAnswerIndex: 0,
+            
         },
         {
             question: "How much wood do you need to make a Tool Cupboard?",
             answers: ["500", "1000", "750", "100"],
             correctAnswerIndex: 1,
+            
         },
         {
             question: "How many metal fragments are needed for a Sheet Metal Door?",
             answers: ["125", "100", "200", "150"],
             correctAnswerIndex: 3,
+            
         },
         {
             question: "Which of the monuments is not a save zone?",
             answers: ["Outpost", "Military Tunnels", "Bandit Camp", "Large Barn"],
             correctAnswerIndex: 1,
+            
         },
         {
             question: "Which of the monuments is a save zone?",
             answers: ["Airfield", "Harbor", "Large Fishing Village", "Launch Site"],
             correctAnswerIndex: 2,
+            
         },
         {
             question: "How many locked crates are there on the ship?",
             answers: ["3", "2", "4", "1"],
             correctAnswerIndex: 0,
+            
         },
         {
             question: "How many locked crates are there on a small oil rig?",
             answers: ["2", "1", "4", "3"],
             correctAnswerIndex: 1,
+            
         },
         {
             question: "How many locked crates are there on a large oil rig?",
             answers: ["0", "4", "2", "1"],
             correctAnswerIndex: 3,
+            
         },
         {
             question: "How many workbenches are there?",
             answers: ["4", "7", "3", "10"],
             correctAnswerIndex: 2,
+            
         },
         {
             question: "From which monument can you buy a boat?",
             answers: ["Fishing Villages", "Water Treatment Plant", " Train Yard", " Oxum’s Gas Station"],
             correctAnswerIndex: 0,
+            
         },
         {
             question: "From which monument can you buy a Minicopter?",
             answers: ["Satellite Dish", "Outpost", "Airfield", "Bandit Camp"],
             correctAnswerIndex: 3,
+            
         },
         {
-            question: "Which planet is known as the Red Planet?",
-            answers: ["Venus", "Mars", "Jupiter", "Saturn"],
+            question: "With which tools can you get wood?",
+            answers: ["Hammer", "Rock", "Jackhammer", "Torch"],
             correctAnswerIndex: 1,
+            
         },
         {
-            question: "Which planet is known as the Red Planet?",
-            answers: ["Venus", "Mars", "Jupiter", "Saturn"],
-            correctAnswerIndex: 1,
+            question: "With which tools can you get stone?",
+            answers: ["Camera", "Handmade Fishing Rod", "Stone Hatchet", "Stone Pickaxe"],
+            correctAnswerIndex: 3,
+            
         },
         {
-            question: "Which planet is known as the Red Planet?",
-            answers: ["Venus", "Mars", "Jupiter", "Saturn"],
-            correctAnswerIndex: 1,
+            question: "How many metal fragments are needed for a Sheet Metal Double Door?",
+            answers: ["190", "250", "200", "300"],
+            correctAnswerIndex: 2,
+            
         },
         {
-            question: "Which planet is known as the Red Planet?",
-            answers: ["Venus", "Mars", "Jupiter", "Saturn"],
-            correctAnswerIndex: 1,
+            question: "How much scrap is a single minicopter worth?",
+            answers: ["750", "1250", "650", "850"],
+            correctAnswerIndex: 0,
+            
         },
 
         // Add more questions here
     ];
 
-    const randomQuestions = questions.slice(0, 14).sort(() => Math.random() - 0.5);
+   
+    const randomQuestions  = questions.slice(0, 14).sort(() => Math.random() - 0.5);
 
     return (
       <>
@@ -131,11 +148,12 @@ function App() {
               <Route exact path="/search" element={<Search />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/password-reset-success" element={<PasswordResetSuccess />} />
+              <Route path="/question" element={<Game />} />
               {randomQuestions.map((question, index) => (
                 <Route
                   key={index}
                   path={`/question/${index + 1}`}
-                  element={<Question question={question} questionIndex={index} randomQuestions={randomQuestions} />}
+                  element={<Question question={question} questionIndex={index} randomQuestions ={randomQuestions } />}
                 />
               ))}
               <Route path="/serversEU" element={<ServersEU />} />
