@@ -51,6 +51,8 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
         navigate(`/question/${questionIndex + 1}`);
     };
 
+
+
     const getAnswerClassName = (index) => {
         if (selectedAnswer !== null) {
             if (index === correctAnswerIndex) {
@@ -70,25 +72,29 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                         <p className="reached-amount-text">{reachedAmount}</p>
                     </div>
                 )}
-                <h2 className="question-text">{questionText}</h2>
-                <ul className="answer-list">
-                    {answers.map((answer, index) => (
-                        <li
-                            key={index}
-                            className={`answer-item ${getAnswerClassName(index)}`}
-                            onClick={() => handleAnswerClick(index)}
-                        >
-                            <span className="answer-index">{String.fromCharCode(65 + index)}:</span> {answer}
-                        </li>
-                    ))}
-                </ul>
+                <div className='question-tables'>
+                    <h2 className="question-text">{questionText}</h2>
+                    <ul className="answer-list">
+                        {answers.map((answer, index) => (
+                            <li
+                                key={index}
+                                className={`answer-item ${getAnswerClassName(index)}`}
+                                onClick={() => handleAnswerClick(index)}
+                            >
+                                <span className="answer-index">{String.fromCharCode(65 + index)}:</span> {answer}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
                 {gameOver && selectedAnswer !== correctAnswerIndex && (
                     <div className="game-over-container">
                         <p className="game-over-text">{GameOver}</p>
                         <button className="restart-button" onClick={() => navigate('/question')} >
                             Restart
                         </button>
+
                     </div>
+
                 )}
             </div>
             <QuestionTable currentQuestionIndex={questionIndex + 1} totalQuestions={randomQuestions.length} />
@@ -137,7 +143,7 @@ const QuestionTable = ({ currentQuestionIndex, totalQuestions, }) => {
     const handlerClickCallTeam = () => {
         // Handle the logic for starting the game here
         // You can use the gameRules state to access the entered rules
-        
+
         // Example: Navigate to the question page
 
     };
@@ -155,6 +161,7 @@ const QuestionTable = ({ currentQuestionIndex, totalQuestions, }) => {
                         const questionNumberClass = isReachedAmount ? 'question-number reached-amount' : 'question-number';
 
                         return (
+
                             <tr key={questionNumber} className={questionRowClass}>
                                 <td className="question-sum">{sums[questionNumber]}</td>
                                 <td className={questionNumberClass}>

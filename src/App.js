@@ -30,6 +30,8 @@ import Clips from './componets/Clips/Clips';
 import ForgotPassword from './componets/ForgotPassword/ForgotPassword';
 import PasswordResetSuccess from './componets/ForgotPassword/PasswordResetSuccess';
 import Game from './componets/Question/Game';
+import VanillaUS from './componets/Servers/Vanilla/VanillaUS';
+import ServersUS from './componets/Servers/ServersUS';
 
 
 function App() {
@@ -156,7 +158,9 @@ function App() {
                 />
               ))}
               <Route path="/serversEU" element={<ServersEU />} />
+              <Route path="/serversUS" element={<ServersUS />} />
               <Route path="/serversEU/vanillaEU" element={<VanillaEU />} />
+              <Route path="/serversUS/vanillaUS" element={<VanillaUS />} />
               <Route path="/posty" element={<Posty />} />
               <Route path="/posty/comments" element={<Comments />} />
               <Route path="/posty/clips" element={<Clips />} />
