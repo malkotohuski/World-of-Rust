@@ -98,7 +98,7 @@
   
   .question-row td {
     text-align: center;
-    border: 5px solid #ccc;
+    border: 5px solid #0066cc;
     
   }
   
@@ -113,6 +113,7 @@
 
   .question-sum {
     padding: 7px 80px;
+    
   }
   
  .reached-amount-text{
@@ -176,5 +177,10 @@
   height:  2em;
 }
 
+.question-tables{ 
+  background-color: #0066cc;
+  width: 601px;
+  border-radius: 8px;
+}
   
   
