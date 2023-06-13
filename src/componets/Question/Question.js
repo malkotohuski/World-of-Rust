@@ -51,6 +51,8 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
         navigate(`/question/${questionIndex + 1}`);
     };
 
+   
+
     const getAnswerClassName = (index) => {
         if (selectedAnswer !== null) {
             if (index === correctAnswerIndex) {
@@ -137,7 +139,7 @@ const QuestionTable = ({ currentQuestionIndex, totalQuestions, }) => {
     const handlerClickCallTeam = () => {
         // Handle the logic for starting the game here
         // You can use the gameRules state to access the entered rules
-        
+    
         // Example: Navigate to the question page
 
     };
@@ -155,6 +157,7 @@ const QuestionTable = ({ currentQuestionIndex, totalQuestions, }) => {
                         const questionNumberClass = isReachedAmount ? 'question-number reached-amount' : 'question-number';
 
                         return (
+                            
                             <tr key={questionNumber} className={questionRowClass}>
                                 <td className="question-sum">{sums[questionNumber]}</td>
                                 <td className={questionNumberClass}>
