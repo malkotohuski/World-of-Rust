@@ -125,12 +125,11 @@ function App() {
             correctAnswerIndex: 0,
             
         },
-
+      
         // Add more questions here
-    ];
-
-   
-    const randomQuestions  = questions.slice(0, 14).sort(() => Math.random() - 0.5);
+      ];
+      
+      const randomQuestions  = questions.slice(0, 15).sort(() => Math.random() - 0.5);
 
     return (
       <>
@@ -153,7 +152,7 @@ function App() {
                 <Route
                   key={index}
                   path={`/question/${index + 1}`}
-                  element={<Question question={question} questionIndex={index} randomQuestions ={randomQuestions } />}
+                  element={<Question question={question} questionIndex={index} randomQuestions ={randomQuestions} />}
                 />
               ))}
               <Route path="/serversEU" element={<ServersEU />} />

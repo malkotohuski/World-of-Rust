@@ -98,12 +98,12 @@
   
   .question-row td {
     text-align: center;
-    border: 1px solid #ccc;
+    border: 5px solid #ccc;
     
   }
   
   .question-row.active {
-    background-color: #4caf50;
+    background-color: #4caf50 !important;
     color: #fff;
   }
 
@@ -112,7 +112,7 @@
   }
 
   .question-sum {
-    padding: 5px 10px;
+    padding: 7px 80px;
   }
   
  .reached-amount-text{
@@ -123,5 +123,54 @@
     background-color: lightblue; /* Set the background color to light blue for question number 5 */
   }
   
+  .remove-two{
+    padding: 5px;
+}
+
+.remove-two:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.fa-people-group{
+    padding: 5px;
+}
+
+.fa-people-group:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.fa-phone-volume{
+  padding: 5px;
+}
+
+.fa-phone-volume:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.fa-divide{
+  padding: 5px;
+}
+
+.fa-divide:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.jokers{
+  justify-content: space-between;
+  display: flex;
+  margin: 15px auto;
+  background-color: #0066cc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
   
   
