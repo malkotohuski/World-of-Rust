@@ -147,6 +147,61 @@ function App() {
             answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
             correctAnswerIndex: 0,
         },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
+        {
+            question: "What is the name of the fastest horse in the game?",
+            answers: ["White Thoroughbred", "Black Thoroughbred", "Buckskin", "Dapple Grey"],
+            correctAnswerIndex: 0,
+        },
         // Add more questions here
     ];
 
