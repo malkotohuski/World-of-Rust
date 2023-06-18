@@ -6,7 +6,7 @@ function Footer() {
     <footer>
       <div className="footer-content">
         <div className="name">Daniel Dimitrov</div>
-        <div className="email">Email: malkotohusk@gmail.com</div>
+        <div className="email">malkotohusk@gmail.com</div>
       </div>
     </footer>
   );
