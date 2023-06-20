@@ -15,12 +15,15 @@ const Fireworks = () => {
     }, []);
 
     const createParticle = () => {
+        const colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff"]; // Add more colors if desired
+
         const particle = {
             x: Math.random() * window.innerWidth,
             y: Math.random() * window.innerHeight,
-            size: Math.random() * 3 + 1,
+            size: Math.random() * 15 + 5, // Adjust the size range as desired
             xv: Math.random() * 3 - 1.5,
             yv: Math.random() * 3 - 1.5,
+            color: colors[Math.floor(Math.random() * colors.length)],
         };
 
         setParticles((prevState) => [...prevState, particle]);
@@ -34,7 +37,7 @@ const Fireworks = () => {
 
     return (
         <div className="fireworks-container">
-            <div className="center-text">Congratulations you survived !</div>
+            <div className="center-text">Congratulations you survived</div>
             {particles.map((particle, index) => (
                 <div
                     key={index}
@@ -44,6 +47,7 @@ const Fireworks = () => {
                         top: particle.y,
                         width: particle.size,
                         height: particle.size,
+                        backgroundColor: particle.color,
                     }}
                 ></div>
             ))}
