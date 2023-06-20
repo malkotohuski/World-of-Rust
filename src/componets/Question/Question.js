@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link, useLocation } from 'react-router-dom';
-import './Question.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDivide, faPeopleGroup, faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "./Question.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faDivide,
+    faPeopleGroup,
+    faPhoneVolume,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Question = ({ question, questionIndex, randomQuestions }) => {
     const navigate = useNavigate();
@@ -12,8 +16,12 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
 
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [gameOver, setGameOver] = useState(false);
-    const [reachedAmount, setReachedAmount] = useState('');
+    const [reachedAmount, setReachedAmount] = useState("");
     const GameOver = "GAME OVER !";
+
+    if (question > 16) {
+        setReachedAmount("OMG u doned !!!");
+    }
 
     useEffect(() => {
         setSelectedAnswer(null); // Reset selected answer when the question changes
@@ -24,7 +32,7 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
 
         if (gameOver) {
             setGameOver(false); // Reset the game over state when the answer is clicked again
-            setReachedAmount(''); // Clear the reached amount message
+            setReachedAmount(""); // Clear the reached amount message
             return;
         }
 
@@ -34,34 +42,36 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                 if (nextQuestionIndex < randomQuestions.length) {
                     navigate(`/question/${nextQuestionIndex + 1}`);
                     if (nextQuestionIndex + 1 === 6) {
-                        setReachedAmount("Great, you've reached your first sure amount!");
+                        setReachedAmount(
+                            "Great, you've reached your first sure amount!"
+                        );
                     } else if (nextQuestionIndex + 1 === 11) {
-                        setReachedAmount("'great, you reached the second certain amount'");
+                        setReachedAmount(
+                            "'great, you reached the second certain amount'"
+                        );
                     } else {
-                        setReachedAmount('');
+                        setReachedAmount("");
                     }
                 } else {
-                    navigate('/game-over');
+                    navigate("/game-over");
                 }
             }, 1500);
         } else {
             setGameOver(true);
-            setReachedAmount('');
+            setReachedAmount("");
         }
         navigate(`/question/${questionIndex + 1}`);
     };
 
-
-
     const getAnswerClassName = (index) => {
         if (selectedAnswer !== null) {
             if (index === correctAnswerIndex) {
-                return selectedAnswer === index ? 'answer-correct' : '';
+                return selectedAnswer === index ? "answer-correct" : "";
             } else if (index === selectedAnswer) {
-                return 'answer-incorrect';
+                return "answer-incorrect";
             }
         }
-        return '';
+        return "";
     };
 
     return (
@@ -72,16 +82,21 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                         <p className="reached-amount-text">{reachedAmount}</p>
                     </div>
                 )}
-                <div className='question-tables'>
+                <div className="question-tables">
                     <h2 className="question-text">{questionText}</h2>
                     <ul className="answer-list">
                         {answers.map((answer, index) => (
                             <li
                                 key={index}
-                                className={`answer-item ${getAnswerClassName(index)}`}
+                                className={`answer-item ${getAnswerClassName(
+                                    index
+                                )}`}
                                 onClick={() => handleAnswerClick(index)}
                             >
-                                <span className="answer-index">{String.fromCharCode(65 + index)}:</span> {answer}
+                                <span className="answer-index">
+                                    {String.fromCharCode(65 + index)}:
+                                </span>{" "}
+                                {answer}
                             </li>
                         ))}
                     </ul>
@@ -89,22 +104,26 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                 {gameOver && selectedAnswer !== correctAnswerIndex && (
                     <div className="game-over-container">
                         <p className="game-over-text">{GameOver}</p>
-                        <button className="restart-button" onClick={() => navigate('/question')} >
+                        <button
+                            className="restart-button"
+                            onClick={() => navigate("/question")}
+                        >
                             Restart
                         </button>
-
                     </div>
-
                 )}
             </div>
-            <QuestionTable currentQuestionIndex={questionIndex + 1} totalQuestions={randomQuestions.length} />
+            <QuestionTable
+                currentQuestionIndex={questionIndex + 1}
+                totalQuestions={randomQuestions.length}
+            />
         </div>
     );
 };
 
-const QuestionTable = ({ currentQuestionIndex, totalQuestions, }) => {
+const QuestionTable = ({ currentQuestionIndex, totalQuestions }) => {
     const location = useLocation();
-    const currentQuestion = parseInt(location.pathname.split('/').pop(), 10);
+    const currentQuestion = parseInt(location.pathname.split("/").pop(), 10);
 
     const sums = {
         1: 100,
@@ -127,62 +146,76 @@ const QuestionTable = ({ currentQuestionIndex, totalQuestions, }) => {
     const handleEliminateClick = () => {
         // Handle the logic for starting the game here
         // You can use the gameRules state to access the entered rules
-
         // Example: Navigate to the question page
-
     };
 
     const handlerClickHelp = () => {
         // Handle the logic for starting the game here
         // You can use the gameRules state to access the entered rules
-
         // Example: Navigate to the question page
-
     };
 
     const handlerClickCallTeam = () => {
         // Handle the logic for starting the game here
         // You can use the gameRules state to access the entered rules
-
         // Example: Navigate to the question page
-
     };
 
     return (
-        <div className='game-field'>
+        <div className="game-field">
             <table className="question-table">
                 <tbody>
                     {[...Array(totalQuestions)].map((_, index) => {
                         const questionNumber = totalQuestions - index;
                         const isActive = currentQuestion === questionNumber;
-                        const isReachedAmount = questionNumber === 5 || questionNumber === 10;
+                        const isReachedAmount =
+                            questionNumber === 5 || questionNumber === 10;
 
-                        const questionRowClass = isActive ? 'question-row active' : 'question-row';
-                        const questionNumberClass = isReachedAmount ? 'question-number reached-amount' : 'question-number';
+                        const questionRowClass = isActive
+                            ? "question-row active"
+                            : "question-row";
+                        const questionNumberClass = isReachedAmount
+                            ? "question-number reached-amount"
+                            : "question-number";
 
                         return (
-
-                            <tr key={questionNumber} className={questionRowClass}>
-                                <td className="question-sum">{sums[questionNumber]}</td>
+                            <tr
+                                key={questionNumber}
+                                className={questionRowClass}
+                            >
+                                <td className="question-sum">
+                                    {sums[questionNumber]}
+                                </td>
                                 <td className={questionNumberClass}>
-                                    <Link to={`/question/${questionNumber}`}>{questionNumber}</Link>
+                                    <Link to={`/question/${questionNumber}`}>
+                                        {questionNumber}
+                                    </Link>
                                 </td>
                             </tr>
                         );
                     })}
                 </tbody>
             </table>
-            <div className='jokers'>
+            <div className="jokers">
                 <FontAwesomeIcon icon={faDivide}>
-                    <button className='remove-two' onClick={handleEliminateClick}>
+                    <button
+                        className="remove-two"
+                        onClick={handleEliminateClick}
+                    >
                         50:50
                     </button>
                 </FontAwesomeIcon>
                 <FontAwesomeIcon icon={faPeopleGroup}>
-                    <button className='help-group' onClick={handlerClickHelp}></button>
+                    <button
+                        className="help-group"
+                        onClick={handlerClickHelp}
+                    ></button>
                 </FontAwesomeIcon>
                 <FontAwesomeIcon icon={faPhoneVolume}>
-                    <button className='call-team' onClick={() => handlerClickCallTeam()}></button>
+                    <button
+                        className="call-team"
+                        onClick={() => handlerClickCallTeam()}
+                    ></button>
                 </FontAwesomeIcon>
             </div>
         </div>
