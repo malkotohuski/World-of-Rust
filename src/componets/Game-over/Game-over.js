@@ -15,7 +15,16 @@ const Fireworks = () => {
     }, []);
 
     const createParticle = () => {
-        const colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff"]; // Add more colors if desired
+        const colors = [
+            "#ff0000",
+            "#00ff00",
+            "#0000ff",
+            "#ffff00",
+            "#ff00ff",
+            "#f999ff",
+            "#ff99",
+            "#f999",
+        ]; // Add more colors if desired
 
         const particle = {
             x: Math.random() * window.innerWidth,
