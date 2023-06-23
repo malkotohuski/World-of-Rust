@@ -24,6 +24,10 @@ const Fireworks = () => {
             "#f999ff",
             "#ff99",
             "#f999",
+            "#f9009f",
+            "#9f99",
+            "#6fff",
+            "#88ff",
         ]; // Add more colors if desired
 
         const particle = {
