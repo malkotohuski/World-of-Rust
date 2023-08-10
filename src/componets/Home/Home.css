@@ -207,6 +207,23 @@ body {
     content: 'CoconutB'; /* Set the title for item 9 */
 }
 
+.item-10 {
+    background-image: url(../../images/riqqeloff-image.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+    content: 'CoconutB'; /* Set the title for item 9 */
+}
+
+.item-11 {
+    background-image: url(../../images/dyanna-image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+    content: 'CoconutB'; /* Set the title for item 9 */
+}
 
 /* .item-6 {
   background-color: var(--clr-pink);
@@ -228,7 +245,9 @@ body {
 .deathwingua-image,
 .hJune-image,
 .r00t9r-image,
-.coco-image {
+.coco-image,
+.riqqeloff-image,
+.Dyanna-image {
     text-decoration: none;
     color: aliceblue !important;
    
