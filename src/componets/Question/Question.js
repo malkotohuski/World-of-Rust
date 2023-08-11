@@ -116,13 +116,20 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
             <QuestionTable
                 currentQuestionIndex={questionIndex + 1}
                 totalQuestions={randomQuestions.length}
+                correctAnswerIndex={correctAnswerIndex} // Pass the correct answer index
             />
         </div>
     );
 };
 
-const QuestionTable = ({ currentQuestionIndex, totalQuestions }) => {
+const QuestionTable = ({
+    currentQuestionIndex,
+    totalQuestions,
+    correctAnswerIndex,
+    setSelectedAnswer, // Receive setSelectedAnswer prop
+}) => {
     const location = useLocation();
+    const navigate = useNavigate(); // Use the useNavigate hook
     const currentQuestion = parseInt(location.pathname.split("/").pop(), 10);
 
     const sums = {
@@ -150,9 +157,17 @@ const QuestionTable = ({ currentQuestionIndex, totalQuestions }) => {
     };
 
     const handlerClickHelp = () => {
-        // Handle the logic for starting the game here
-        // You can use the gameRules state to access the entered rules
-        // Example: Navigate to the question page
+        setSelectedAnswer(correctAnswerIndex);
+
+        // Move on to the next question
+        setTimeout(() => {
+            const nextQuestionIndex = currentQuestionIndex;
+            if (nextQuestionIndex < totalQuestions) {
+                navigate(`/question/${nextQuestionIndex + 1}`);
+            } else {
+                navigate("/game-over");
+            }
+        }, 1500);
     };
 
     const handlerClickCallTeam = () => {
@@ -208,7 +223,7 @@ const QuestionTable = ({ currentQuestionIndex, totalQuestions }) => {
                 <FontAwesomeIcon icon={faPeopleGroup}>
                     <button
                         className="help-group"
-                        onClick={handlerClickHelp}
+                        onClick={() => handlerClickHelp()}
                     ></button>
                 </FontAwesomeIcon>
                 <FontAwesomeIcon icon={faPhoneVolume}>
