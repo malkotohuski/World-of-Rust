@@ -10,6 +10,8 @@ import NotFound from "./componets/NotFound/NotFound";
 import Footer from "./componets/Footer/Footer";
 import Question from "./componets/Question/Question";
 
+import filterQuestionsByDifficulty from "./componets/Question/Questions";
+
 import ServersEU from "./componets/Servers/ServersEU";
 import VanillaEU from "./componets/Servers/Vanilla/VanillaEU";
 
@@ -38,9 +40,9 @@ import Riqqeloff from "./componets/Steamers/Riqqeloff/Riqqeloff";
 import Dyanna from "./componets/Steamers/Dyanna/Dyanna";
 
 function App() {
-    const randomQuestions = questions
-        .slice(0, 15)
-        .sort(() => Math.random() - 0.5);
+    const randomQuestions = filterQuestionsByDifficulty(15).sort(
+        () => Math.random() - 0.5
+    );
 
     return (
         <>
