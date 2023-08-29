@@ -3,11 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import "./Question.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faDivide,
-    faPeopleGroup,
-    faPhoneVolume,
-} from "@fortawesome/free-solid-svg-icons";
+import { faDivide, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 
 const Question = ({ question, questionIndex, randomQuestions }) => {
     const navigate = useNavigate();
@@ -116,7 +112,8 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
             <QuestionTable
                 currentQuestionIndex={questionIndex + 1}
                 totalQuestions={randomQuestions.length}
-                correctAnswerIndex={correctAnswerIndex} // Pass the correct answer index
+                correctAnswerIndex={correctAnswerIndex}
+                setSelectedAnswer={setSelectedAnswer} // Pass the setSelectedAnswer function
             />
         </div>
     );
@@ -128,6 +125,7 @@ const QuestionTable = ({
     correctAnswerIndex,
     setSelectedAnswer, // Receive setSelectedAnswer prop
 }) => {
+    const [helpUsed, setHelpUsed] = useState(false);
     const location = useLocation();
     const navigate = useNavigate(); // Use the useNavigate hook
     const currentQuestion = parseInt(location.pathname.split("/").pop(), 10);
@@ -157,17 +155,19 @@ const QuestionTable = ({
     };
 
     const handlerClickHelp = () => {
-        setSelectedAnswer(correctAnswerIndex);
+        if (!helpUsed) {
+            setHelpUsed(true);
+            setSelectedAnswer(correctAnswerIndex);
 
-        // Move on to the next question
-        setTimeout(() => {
-            const nextQuestionIndex = currentQuestionIndex;
-            if (nextQuestionIndex < totalQuestions) {
-                navigate(`/question/${nextQuestionIndex + 1}`);
-            } else {
-                navigate("/game-over");
-            }
-        }, 1500);
+            setTimeout(() => {
+                const nextQuestionIndex = currentQuestionIndex;
+                if (nextQuestionIndex < totalQuestions - 1) {
+                    navigate(`/question/${nextQuestionIndex + 2}`);
+                } else {
+                    navigate("/game-over");
+                }
+            }, 1500);
+        }
     };
 
     const handlerClickCallTeam = () => {
@@ -220,16 +220,16 @@ const QuestionTable = ({
                         50:50
                     </button>
                 </FontAwesomeIcon>
-                <FontAwesomeIcon icon={faPeopleGroup}>
-                    <button
-                        className="help-group"
-                        onClick={() => handlerClickHelp()}
-                    ></button>
-                </FontAwesomeIcon>
+                <button
+                    className="help-group"
+                    onClick={handlerClickHelp} // Correctly reference the function without parentheses
+                ></button>
+
                 <FontAwesomeIcon icon={faPhoneVolume}>
                     <button
-                        className="call-team"
-                        onClick={() => handlerClickCallTeam()}
+                        className="help-group"
+                        onClick={handlerClickHelp}
+                        disabled={helpUsed} // Disable the button once help is used
                     ></button>
                 </FontAwesomeIcon>
             </div>
