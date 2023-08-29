@@ -222,14 +222,14 @@ const QuestionTable = ({
                 </FontAwesomeIcon>
                 <button
                     className="help-group"
-                    onClick={handlerClickHelp} // Correctly reference the function without parentheses
+                    onClick={handlerClickHelp}
+                    disabled={helpUsed} // Disable the button once help is used
                 ></button>
 
                 <FontAwesomeIcon icon={faPhoneVolume}>
                     <button
-                        className="help-group"
-                        onClick={handlerClickHelp}
-                        disabled={helpUsed} // Disable the button once help is used
+                        className="call-team"
+                        onClick={() => handlerClickCallTeam()}
                     ></button>
                 </FontAwesomeIcon>
             </div>
