@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import "./Question.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDivide, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 
 const Question = ({ question, questionIndex, randomQuestions }) => {
     const navigate = useNavigate();
@@ -212,14 +210,10 @@ const QuestionTable = ({
                 </tbody>
             </table>
             <div className="jokers">
-                <FontAwesomeIcon icon={faDivide}>
-                    <button
-                        className="remove-two"
-                        onClick={handleEliminateClick}
-                    >
-                        50:50
-                    </button>
-                </FontAwesomeIcon>
+                <button className="remove-two" onClick={handleEliminateClick}>
+                    50:50
+                </button>
+
                 <button
                     className="help-group"
                     onClick={handlerClickCallTeam}
@@ -228,12 +222,12 @@ const QuestionTable = ({
                     Call
                 </button>
 
-                <FontAwesomeIcon icon={faPhoneVolume}>
-                    <button
-                        className="call-team"
-                        onClick={() => handlerClickHelp()}
-                    ></button>
-                </FontAwesomeIcon>
+                <button
+                    className="call-team"
+                    onClick={() => handlerClickHelp()}
+                >
+                    ^^^
+                </button>
             </div>
         </div>
     );
