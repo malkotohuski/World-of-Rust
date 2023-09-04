@@ -154,7 +154,7 @@ const QuestionTable = ({
         // Example: Navigate to the question page
     };
 
-    const handlerClickHelp = () => {
+    const handlerClickCallTeam = () => {
         if (!helpUsed) {
             setHelpUsed(true);
             setSelectedAnswer(correctAnswerIndex);
@@ -162,7 +162,7 @@ const QuestionTable = ({
             setTimeout(() => {
                 const nextQuestionIndex = currentQuestionIndex;
                 if (nextQuestionIndex < totalQuestions - 1) {
-                    navigate(`/question/${nextQuestionIndex + 2}`);
+                    navigate(`/question/${nextQuestionIndex + 1}`);
                 } else {
                     navigate("/game-over");
                 }
@@ -170,7 +170,7 @@ const QuestionTable = ({
         }
     };
 
-    const handlerClickCallTeam = () => {
+    const handlerClickHelp = () => {
         // Handle the logic for starting the game here
         // You can use the gameRules state to access the entered rules
         // Example: Navigate to the question page
@@ -222,14 +222,16 @@ const QuestionTable = ({
                 </FontAwesomeIcon>
                 <button
                     className="help-group"
-                    onClick={handlerClickHelp}
+                    onClick={handlerClickCallTeam}
                     disabled={helpUsed} // Disable the button once help is used
-                ></button>
+                >
+                    Call
+                </button>
 
                 <FontAwesomeIcon icon={faPhoneVolume}>
                     <button
                         className="call-team"
-                        onClick={() => handlerClickCallTeam()}
+                        onClick={() => handlerClickHelp()}
                     ></button>
                 </FontAwesomeIcon>
             </div>
