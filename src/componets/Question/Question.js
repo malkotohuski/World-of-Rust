@@ -53,6 +53,7 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                     } else {
                         setReachedAmount("");
                     }
+                    setHiddenAnswers([]); // Clear hiddenAnswers when moving to the next question
                 } else {
                     navigate("/game-over");
                 }
@@ -150,7 +151,8 @@ const QuestionTable = ({
     const location = useLocation();
     const navigate = useNavigate(); // Use the useNavigate hook
     const currentQuestion = parseInt(location.pathname.split("/").pop(), 10);
-    const maxEliminations = 2;
+
+    const maxEliminations = 4;
 
     const sums = {
         1: 100,
@@ -193,11 +195,10 @@ const QuestionTable = ({
                 setHiddenAnswers(eliminatedAnswers);
 
                 // Increment the eliminationsUsed counter
-                setEliminationsUsed(eliminationsUsed + 1);
+                setEliminationsUsed(eliminationsUsed + 3);
 
                 // Check if all eliminations are used, and if so, reset hiddenAnswers
                 if (eliminationsUsed + 1 === maxEliminations) {
-                    setHiddenAnswers([]);
                 }
 
                 // Set eliminateUsed to true to prevent further use
