@@ -13,6 +13,13 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
     const [reachedAmount, setReachedAmount] = useState("");
     const GameOver = "GAME OVER !";
 
+    const [hiddenAnswers, setHiddenAnswers] = useState([]);
+    const [eliminateUsed, setEliminateUsed] = useState(false);
+
+    const resetEliminate = () => {
+        setEliminateUsed(false);
+    };
+
     if (question > 16) {
         setReachedAmount("OMG u doned !!!");
     }
@@ -23,7 +30,7 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
 
     const handleAnswerClick = (index) => {
         setSelectedAnswer(index);
-
+        resetEliminate();
         if (gameOver) {
             setGameOver(false); // Reset the game over state when the answer is clicked again
             setReachedAmount(""); // Clear the reached amount message
@@ -64,6 +71,8 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
             } else if (index === selectedAnswer) {
                 return "answer-incorrect";
             }
+        } else if (hiddenAnswers.includes(index)) {
+            return "answer-hidden";
         }
         return "";
     };
@@ -111,7 +120,13 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                 currentQuestionIndex={questionIndex + 1}
                 totalQuestions={randomQuestions.length}
                 correctAnswerIndex={correctAnswerIndex}
-                setSelectedAnswer={setSelectedAnswer} // Pass the setSelectedAnswer function
+                setHiddenAnswers={setHiddenAnswers}
+                setSelectedAnswer={setSelectedAnswer}
+                gameOver={gameOver}
+                selectedAnswer={selectedAnswer}
+                answers={answers}
+                eliminateUsed={eliminateUsed} // Pass the 'eliminateUsed' prop
+                setEliminateUsed={setEliminateUsed} // Pass the 'setEliminateUsed' prop
             />
         </div>
     );
@@ -121,12 +136,21 @@ const QuestionTable = ({
     currentQuestionIndex,
     totalQuestions,
     correctAnswerIndex,
-    setSelectedAnswer, // Receive setSelectedAnswer prop
+    setHiddenAnswers,
+    setSelectedAnswer,
+    gameOver,
+    selectedAnswer,
+    answers,
+    eliminateUsed,
+    setEliminateUsed, // Receive the 'setEliminateUsed' prop
 }) => {
     const [helpUsed, setHelpUsed] = useState(false);
+    const [halfHelp, setHalfHelp] = useState(false);
+    const [eliminationsUsed, setEliminationsUsed] = useState(0);
     const location = useLocation();
     const navigate = useNavigate(); // Use the useNavigate hook
     const currentQuestion = parseInt(location.pathname.split("/").pop(), 10);
+    const maxEliminations = 2;
 
     const sums = {
         1: 100,
@@ -147,9 +171,51 @@ const QuestionTable = ({
     };
 
     const handleEliminateClick = () => {
-        // Handle the logic for starting the game here
-        // You can use the gameRules state to access the entered rules
-        // Example: Navigate to the question page
+        if (!halfHelp) {
+            setHalfHelp(true);
+            if (!gameOver && selectedAnswer === null && !eliminateUsed) {
+                const incorrectAnswers = answers
+                    .map((answer, index) => ({
+                        answer,
+                        index,
+                    }))
+                    .filter((item) => item.index !== correctAnswerIndex);
+
+                // Shuffle the incorrect answers
+                const shuffledIncorrectAnswers = shuffleArray(incorrectAnswers);
+
+                // Select the first two incorrect answers
+                const eliminatedAnswers = shuffledIncorrectAnswers
+                    .slice(0, 2)
+                    .map((item) => item.index);
+
+                // Mark these two answers as eliminated
+                setHiddenAnswers(eliminatedAnswers);
+
+                // Increment the eliminationsUsed counter
+                setEliminationsUsed(eliminationsUsed + 1);
+
+                // Check if all eliminations are used, and if so, reset hiddenAnswers
+                if (eliminationsUsed + 1 === maxEliminations) {
+                    setHiddenAnswers([]);
+                }
+
+                // Set eliminateUsed to true to prevent further use
+                setEliminateUsed(true);
+            }
+        }
+    };
+
+    const shuffleArray = (array) => {
+        const shuffledArray = [...array];
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [
+                shuffledArray[j],
+                shuffledArray[i],
+            ];
+        }
+        return shuffledArray;
     };
 
     const handlerClickCallTeam = () => {
@@ -210,7 +276,11 @@ const QuestionTable = ({
                 </tbody>
             </table>
             <div className="jokers">
-                <button className="remove-two" onClick={handleEliminateClick}>
+                <button
+                    className="remove-two"
+                    onClick={handleEliminateClick}
+                    disabled={halfHelp}
+                >
                     50:50
                 </button>
 

@@ -206,3 +206,7 @@
   background-color: #3498db;
   height: 20px;
 }
+
+.answer-hidden {
+  display: none;
+}
