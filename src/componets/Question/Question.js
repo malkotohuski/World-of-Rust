@@ -20,8 +20,8 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
         setEliminateUsed(false);
     };
 
-    if (question > 16) {
-        setReachedAmount("OMG u doned !!!");
+    if (questionIndex > 16) {
+        setReachedAmount("OMG u done !!!");
     }
 
     useEffect(() => {
@@ -151,6 +151,8 @@ const QuestionTable = ({
     const location = useLocation();
     const navigate = useNavigate(); // Use the useNavigate hook
     const currentQuestion = parseInt(location.pathname.split("/").pop(), 10);
+    const [percentages, setPercentages] = useState([]);
+    const [helpVisible, setHelpVisible] = useState(false);
 
     const maxEliminations = 4;
 
@@ -236,9 +238,27 @@ const QuestionTable = ({
     };
 
     const handlerClickHelp = () => {
-        // Handle the logic for starting the game here
-        // You can use the gameRules state to access the entered rules
-        // Example: Navigate to the question page
+        const allocatedPercentages = [];
+
+        const letters = ["A", "B", "C", "D"];
+        let remainingPercentage = 100;
+
+        for (let i = 0; i < letters.length - 1; i++) {
+            const randomPercentage = Math.floor(
+                Math.random() * (remainingPercentage + 1)
+            );
+            allocatedPercentages.push(randomPercentage);
+            remainingPercentage -= randomPercentage;
+        }
+
+        allocatedPercentages.push(remainingPercentage);
+
+        setHelpUsed(true);
+        setPercentages(allocatedPercentages);
+
+        setTimeout(() => {
+            setHelpVisible(false);
+        }, 10000); // 10 seconds
     };
 
     return (
@@ -295,7 +315,8 @@ const QuestionTable = ({
 
                 <button
                     className="call-team"
-                    onClick={() => handlerClickHelp()}
+                    onClick={handlerClickHelp}
+                    disabled={halfHelp}
                 >
                     ^^^
                 </button>
