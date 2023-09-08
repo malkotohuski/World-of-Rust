@@ -3,11 +3,53 @@ import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import "./Question.css";
 
+const HelpDiv = () => {
+    const calculateRandomPercentages = () => {
+        const letters = ["A", "B", "C", "D"];
+        let remainingPercentage = 100;
+        const allocatedPercentages = [];
+
+        for (let i = 0; i < letters.length - 1; i++) {
+            const randomPercentage = Math.floor(
+                Math.random() * (remainingPercentage + 1)
+            );
+            allocatedPercentages.push(randomPercentage);
+            remainingPercentage -= randomPercentage;
+        }
+
+        allocatedPercentages.push(remainingPercentage);
+
+        // Shuffle the allocated percentages to randomize the order
+        for (let i = allocatedPercentages.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [allocatedPercentages[i], allocatedPercentages[j]] = [
+                allocatedPercentages[j],
+                allocatedPercentages[i],
+            ];
+        }
+
+        return allocatedPercentages;
+    };
+
+    const randomPercentages = calculateRandomPercentages();
+
+    return (
+        <div className="help-div">
+            {randomPercentages.map((percentage, index) => (
+                <p key={index} className="help-text">
+                    {String.fromCharCode(65 + index)}: {percentage}%
+                </p>
+            ))}
+        </div>
+    );
+};
+
 const Question = ({ question, questionIndex, randomQuestions }) => {
     const navigate = useNavigate();
 
     const { question: questionText, answers, correctAnswerIndex } = question;
 
+    const [helpVisible, setHelpVisible] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [gameOver, setGameOver] = useState(false);
     const [reachedAmount, setReachedAmount] = useState("");
@@ -15,6 +57,7 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
 
     const [hiddenAnswers, setHiddenAnswers] = useState([]);
     const [eliminateUsed, setEliminateUsed] = useState(false);
+    const [callHelp, setCallHelp] = useState(false); // Define callHelp state
 
     const resetEliminate = () => {
         setEliminateUsed(false);
@@ -25,15 +68,15 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
     }
 
     useEffect(() => {
-        setSelectedAnswer(null); // Reset selected answer when the question changes
+        setSelectedAnswer(null);
     }, [questionIndex]);
 
     const handleAnswerClick = (index) => {
         setSelectedAnswer(index);
         resetEliminate();
         if (gameOver) {
-            setGameOver(false); // Reset the game over state when the answer is clicked again
-            setReachedAmount(""); // Clear the reached amount message
+            setGameOver(false);
+            setReachedAmount("");
             return;
         }
 
@@ -48,12 +91,12 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                         );
                     } else if (nextQuestionIndex + 1 === 11) {
                         setReachedAmount(
-                            "'great, you reached the second certain amount'"
+                            "Great, you reached the second certain amount"
                         );
                     } else {
                         setReachedAmount("");
                     }
-                    setHiddenAnswers([]); // Clear hiddenAnswers when moving to the next question
+                    setHiddenAnswers([]);
                 } else {
                     navigate("/game-over");
                 }
@@ -78,6 +121,32 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
         return "";
     };
 
+    const handlerClickHelp = () => {
+        if (!callHelp) {
+            setCallHelp(true);
+            const allocatedPercentages = [];
+
+            const letters = ["A", "B", "C", "D"];
+            let remainingPercentage = 100;
+
+            for (let i = 0; i < letters.length - 1; i++) {
+                const randomPercentage = Math.floor(
+                    Math.random() * (remainingPercentage + 1)
+                );
+                allocatedPercentages.push(randomPercentage);
+                remainingPercentage -= randomPercentage;
+            }
+
+            allocatedPercentages.push(remainingPercentage);
+
+            // Optionally, you can set a timeout to hide the help div
+            setTimeout(() => {
+                setHelpVisible(false);
+            }, 3000); // 30 seconds
+        }
+        setHelpVisible(!helpVisible);
+    };
+
     return (
         <div className="question-page-container">
             <div className="question-container">
@@ -86,6 +155,8 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                         <p className="reached-amount-text">{reachedAmount}</p>
                     </div>
                 )}
+                {helpVisible && <HelpDiv />}
+
                 <div className="question-tables">
                     <h2 className="question-text">{questionText}</h2>
                     <ul className="answer-list">
@@ -126,8 +197,10 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                 gameOver={gameOver}
                 selectedAnswer={selectedAnswer}
                 answers={answers}
-                eliminateUsed={eliminateUsed} // Pass the 'eliminateUsed' prop
-                setEliminateUsed={setEliminateUsed} // Pass the 'setEliminateUsed' prop
+                eliminateUsed={eliminateUsed}
+                setEliminateUsed={setEliminateUsed}
+                helpVisible={helpVisible}
+                handleHelpClick={handlerClickHelp}
             />
         </div>
     );
@@ -144,16 +217,18 @@ const QuestionTable = ({
     answers,
     eliminateUsed,
     setEliminateUsed, // Receive the 'setEliminateUsed' prop
+    handleHelpClick, // Receive the click handler for help
 }) => {
     const [helpUsed, setHelpUsed] = useState(false);
     const [halfHelp, setHalfHelp] = useState(false);
+    const [callHelp, setCallHelp] = useState(false);
     const [eliminationsUsed, setEliminationsUsed] = useState(0);
     const location = useLocation();
     const navigate = useNavigate(); // Use the useNavigate hook
     const currentQuestion = parseInt(location.pathname.split("/").pop(), 10);
-    const [percentages, setPercentages] = useState([]);
+    const [callTeamUsed, setCallTeamUsed] = useState(false);
+    const [callTeamClicked, setCallTeamClicked] = useState(false);
     const [helpVisible, setHelpVisible] = useState(false);
-
     const maxEliminations = 4;
 
     const sums = {
@@ -201,6 +276,7 @@ const QuestionTable = ({
 
                 // Check if all eliminations are used, and if so, reset hiddenAnswers
                 if (eliminationsUsed + 1 === maxEliminations) {
+                    // Reset hiddenAnswers here if needed
                 }
 
                 // Set eliminateUsed to true to prevent further use
@@ -222,9 +298,11 @@ const QuestionTable = ({
     };
 
     const handlerClickCallTeam = () => {
-        if (!helpUsed) {
+        if (!helpUsed && !callTeamUsed) {
             setHelpUsed(true);
             setSelectedAnswer(correctAnswerIndex);
+            setCallTeamUsed(true); // Set the button as used
+            setCallTeamClicked(true); // Set the button as clicked
 
             setTimeout(() => {
                 const nextQuestionIndex = currentQuestionIndex;
@@ -234,31 +312,12 @@ const QuestionTable = ({
                     navigate("/game-over");
                 }
             }, 1500);
+
+            // Hide the HelpDiv after 5 seconds
+            setTimeout(() => {
+                setHelpVisible(false);
+            }, 5000);
         }
-    };
-
-    const handlerClickHelp = () => {
-        const allocatedPercentages = [];
-
-        const letters = ["A", "B", "C", "D"];
-        let remainingPercentage = 100;
-
-        for (let i = 0; i < letters.length - 1; i++) {
-            const randomPercentage = Math.floor(
-                Math.random() * (remainingPercentage + 1)
-            );
-            allocatedPercentages.push(randomPercentage);
-            remainingPercentage -= randomPercentage;
-        }
-
-        allocatedPercentages.push(remainingPercentage);
-
-        setHelpUsed(true);
-        setPercentages(allocatedPercentages);
-
-        setTimeout(() => {
-            setHelpVisible(false);
-        }, 10000); // 10 seconds
     };
 
     return (
@@ -315,8 +374,8 @@ const QuestionTable = ({
 
                 <button
                     className="call-team"
-                    onClick={handlerClickHelp}
-                    disabled={halfHelp}
+                    onClick={handleHelpClick} // Use handleHelpClick instead of handlerClickHelp
+                    disabled={callHelp || callTeamUsed}
                 >
                     ^^^
                 </button>
