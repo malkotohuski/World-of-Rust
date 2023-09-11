@@ -221,14 +221,11 @@ const QuestionTable = ({
 }) => {
     const [helpUsed, setHelpUsed] = useState(false);
     const [halfHelp, setHalfHelp] = useState(false);
-    const [callHelp, setCallHelp] = useState(false);
+    const [callTeamUsed, setCallTeamUsed] = useState(false);
     const [eliminationsUsed, setEliminationsUsed] = useState(0);
     const location = useLocation();
     const navigate = useNavigate(); // Use the useNavigate hook
     const currentQuestion = parseInt(location.pathname.split("/").pop(), 10);
-    const [callTeamUsed, setCallTeamUsed] = useState(false);
-    const [callTeamClicked, setCallTeamClicked] = useState(false);
-    const [helpVisible, setHelpVisible] = useState(false);
     const maxEliminations = 4;
 
     const sums = {
@@ -298,11 +295,9 @@ const QuestionTable = ({
     };
 
     const handlerClickCallTeam = () => {
-        if (!helpUsed && !callTeamUsed) {
+        if (!helpUsed) {
             setHelpUsed(true);
             setSelectedAnswer(correctAnswerIndex);
-            setCallTeamUsed(true); // Set the button as used
-            setCallTeamClicked(true); // Set the button as clicked
 
             setTimeout(() => {
                 const nextQuestionIndex = currentQuestionIndex;
@@ -314,9 +309,6 @@ const QuestionTable = ({
             }, 1500);
 
             // Hide the HelpDiv after 5 seconds
-            setTimeout(() => {
-                setHelpVisible(false);
-            }, 5000);
         }
     };
 
@@ -375,7 +367,7 @@ const QuestionTable = ({
                 <button
                     className="call-team"
                     onClick={handleHelpClick} // Use handleHelpClick instead of handlerClickHelp
-                    disabled={callHelp || callTeamUsed}
+                    disabled={callTeamUsed}
                 >
                     ^^^
                 </button>
