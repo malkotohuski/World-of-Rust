@@ -1401,57 +1401,6 @@
 
     };
 
-    const express = require('express');
-const nodemailer = require('nodemailer');
-const app = express();
-const PORT = 5000; // Replace with your desired port number
-
-// Middleware to parse request body as JSON
-app.use(express.json());
-
-// Endpoint to handle sending email
-app.post('/api/send-email', (req, res) => {
-  const { name, email, message } = req.body;
-
-  // Create a Nodemailer transporter with your email service details
-  const transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-      user: 'your-email@gmail.com',
-      pass: 'your-email-password',
-    },
-  });
-
-  // Configure the email message
-  const mailOptions = {
-    from: 'your-email@gmail.com',
-    to: 'malkotohuski@gmail.com',
-    subject: 'New Contact Form Submission',
-    text: `
-      Name: ${name}
-      Email: ${email}
-      Message: ${message}
-    `,
-  };
-
-  // Send the email
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Failed to send email' });
-    } else {
-      console.log('Email sent:', info.response);
-      res.status(200).json({ message: 'Email sent successfully' });
-    }
-  });
-});
-
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
-
-
     return softuniPracticeServer;
 
 })));
