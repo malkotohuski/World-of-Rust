@@ -201,6 +201,7 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                 setEliminateUsed={setEliminateUsed}
                 helpVisible={helpVisible}
                 handleHelpClick={handlerClickHelp}
+                callHelp={callHelp}
             />
         </div>
     );
@@ -218,10 +219,11 @@ const QuestionTable = ({
     eliminateUsed,
     setEliminateUsed, // Receive the 'setEliminateUsed' prop
     handleHelpClick, // Receive the click handler for help
+    callHelp,
 }) => {
     const [helpUsed, setHelpUsed] = useState(false);
     const [halfHelp, setHalfHelp] = useState(false);
-    const [callTeamUsed, setCallTeamUsed] = useState(false);
+
     const [eliminationsUsed, setEliminationsUsed] = useState(0);
     const location = useLocation();
     const navigate = useNavigate(); // Use the useNavigate hook
@@ -260,16 +262,17 @@ const QuestionTable = ({
                 // Shuffle the incorrect answers
                 const shuffledIncorrectAnswers = shuffleArray(incorrectAnswers);
 
-                // Select the first two incorrect answers
-                const eliminatedAnswers = shuffledIncorrectAnswers
-                    .slice(0, 2)
-                    .map((item) => item.index);
+                // Select two incorrect answers to eliminate
+                const eliminatedAnswers = [
+                    shuffledIncorrectAnswers[0].index,
+                    shuffledIncorrectAnswers[1].index,
+                ];
 
-                // Mark these two answers as eliminated
+                // Include the eliminated answer indices in hiddenAnswers
                 setHiddenAnswers(eliminatedAnswers);
 
                 // Increment the eliminationsUsed counter
-                setEliminationsUsed(eliminationsUsed + 3);
+                setEliminationsUsed(eliminationsUsed + 1);
 
                 // Check if all eliminations are used, and if so, reset hiddenAnswers
                 if (eliminationsUsed + 1 === maxEliminations) {
@@ -367,7 +370,7 @@ const QuestionTable = ({
                 <button
                     className="call-team"
                     onClick={handleHelpClick} // Use handleHelpClick instead of handlerClickHelp
-                    disabled={callTeamUsed}
+                    disabled={callHelp}
                 >
                     ^^^
                 </button>
