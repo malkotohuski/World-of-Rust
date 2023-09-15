@@ -142,7 +142,7 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
             // Optionally, you can set a timeout to hide the help div
             setTimeout(() => {
                 setHelpVisible(false);
-            }, 3000); // 30 seconds
+            }, 15000); // 15 seconds
         }
         setHelpVisible(!helpVisible);
     };
