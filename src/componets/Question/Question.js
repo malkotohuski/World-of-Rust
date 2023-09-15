@@ -282,6 +282,14 @@ const QuestionTable = ({
                 // Set eliminateUsed to true to prevent further use
                 setEliminateUsed(true);
             }
+            setTimeout(() => {
+                const nextQuestionIndex = currentQuestionIndex;
+                if (nextQuestionIndex < totalQuestions - 1) {
+                    navigate(`/question/${nextQuestionIndex + 1}`);
+                } else {
+                    navigate("/game-over");
+                }
+            }, 1500);
         }
     };
 
