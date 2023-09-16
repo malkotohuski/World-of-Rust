@@ -47,7 +47,14 @@ const HelpDiv = () => {
 const Question = ({ question, questionIndex, randomQuestions }) => {
     const navigate = useNavigate();
 
-    const { question: questionText, answers, correctAnswerIndex } = question;
+    const {
+        question: questionText,
+        answers,
+        correctAnswerIndex,
+        difficulty,
+        selectedEasyQuestions,
+        selectedMediumQuestions,
+    } = question;
 
     const [helpVisible, setHelpVisible] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -57,11 +64,22 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
 
     const [hiddenAnswers, setHiddenAnswers] = useState([]);
     const [eliminateUsed, setEliminateUsed] = useState(false);
-    const [callHelp, setCallHelp] = useState(false); // Define callHelp state
+    const [callHelp, setCallHelp] = useState(false);
 
+    let nextQuestionIndex = questionIndex + 1;
+
+    // Define the question difficulty based on the question index
     const resetEliminate = () => {
         setEliminateUsed(false);
     };
+
+    if (difficulty === "easy") {
+        // If it's an easy question and the index exceeds 6, set it to 6
+        questionIndex = selectedEasyQuestions;
+    } else if (difficulty === "medium") {
+        // If it's a medium question and the index exceeds 16, set it to 16
+        questionIndex = selectedMediumQuestions;
+    }
 
     if (questionIndex > 16) {
         setReachedAmount("OMG u done !!!");
@@ -82,7 +100,6 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
 
         if (index === correctAnswerIndex) {
             setTimeout(() => {
-                const nextQuestionIndex = questionIndex + 1;
                 if (nextQuestionIndex < randomQuestions.length) {
                     navigate(`/question/${nextQuestionIndex + 1}`);
                     if (nextQuestionIndex + 1 === 6) {
