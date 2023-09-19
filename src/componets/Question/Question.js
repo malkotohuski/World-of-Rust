@@ -52,8 +52,6 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
         answers,
         correctAnswerIndex,
         difficulty,
-        selectedEasyQuestions,
-        selectedMediumQuestions,
     } = question;
 
     const [helpVisible, setHelpVisible] = useState(false);
@@ -72,14 +70,6 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
     const resetEliminate = () => {
         setEliminateUsed(false);
     };
-
-    if (difficulty === "easy") {
-        // If it's an easy question and the index exceeds 6, set it to 6
-        questionIndex = selectedEasyQuestions;
-    } else if (difficulty === "medium") {
-        // If it's a medium question and the index exceeds 16, set it to 16
-        questionIndex = selectedMediumQuestions;
-    }
 
     if (questionIndex > 16) {
         setReachedAmount("OMG u done !!!");
@@ -234,8 +224,8 @@ const QuestionTable = ({
     selectedAnswer,
     answers,
     eliminateUsed,
-    setEliminateUsed, // Receive the 'setEliminateUsed' prop
-    handleHelpClick, // Receive the click handler for help
+    setEliminateUsed,
+    handleHelpClick,
     callHelp,
 }) => {
     const [helpUsed, setHelpUsed] = useState(false);
@@ -344,35 +334,39 @@ const QuestionTable = ({
         <div className="game-field">
             <table className="question-table">
                 <tbody>
-                    {[...Array(totalQuestions)].map((_, index) => {
-                        const questionNumber = totalQuestions - index;
-                        const isActive = currentQuestion === questionNumber;
-                        const isReachedAmount =
-                            questionNumber === 5 || questionNumber === 10;
+                    {[...Array(Math.min(totalQuestions, 15))].map(
+                        (_, index) => {
+                            const questionNumber = index + 1; // Start from 1
+                            const isActive = currentQuestion === questionNumber;
+                            const isReachedAmount =
+                                questionNumber === 5 || questionNumber === 10;
 
-                        const questionRowClass = isActive
-                            ? "question-row active"
-                            : "question-row";
-                        const questionNumberClass = isReachedAmount
-                            ? "question-number reached-amount"
-                            : "question-number";
+                            const questionRowClass = isActive
+                                ? "question-row active"
+                                : "question-row";
+                            const questionNumberClass = isReachedAmount
+                                ? "question-number reached-amount"
+                                : "question-number";
 
-                        return (
-                            <tr
-                                key={questionNumber}
-                                className={questionRowClass}
-                            >
-                                <td className="question-sum">
-                                    {sums[questionNumber]}
-                                </td>
-                                <td className={questionNumberClass}>
-                                    <Link to={`/question/${questionNumber}`}>
-                                        {questionNumber}
-                                    </Link>
-                                </td>
-                            </tr>
-                        );
-                    })}
+                            return (
+                                <tr
+                                    key={questionNumber}
+                                    className={questionRowClass}
+                                >
+                                    <td className="question-sum">
+                                        {sums[questionNumber]}
+                                    </td>
+                                    <td className={questionNumberClass}>
+                                        <Link
+                                            to={`/question/${questionNumber}`}
+                                        >
+                                            {questionNumber}
+                                        </Link>
+                                    </td>
+                                </tr>
+                            );
+                        }
+                    )}
                 </tbody>
             </table>
             <div className="jokers">
