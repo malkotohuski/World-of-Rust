@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Home from "./componets/Home/Home";
 import Navbar from "./componets/Navbar/Navbar";
 import ContactPage from "./componets/Contacts/ContactPage";
@@ -9,8 +10,6 @@ import Register from "./componets/Register/Register";
 import NotFound from "./componets/NotFound/NotFound";
 import Footer from "./componets/Footer/Footer";
 import Question from "./componets/Question/Question";
-
-import filterQuestionsByDifficulty from "./componets/Question/Questions";
 
 import ServersEU from "./componets/Servers/ServersEU";
 import VanillaEU from "./componets/Servers/Vanilla/VanillaEU";
@@ -40,9 +39,7 @@ import Riqqeloff from "./componets/Steamers/Riqqeloff/Riqqeloff";
 import Dyanna from "./componets/Steamers/Dyanna/Dyanna";
 
 function App() {
-    const randomQuestions = filterQuestionsByDifficulty(15).sort(
-        () => Math.random() - 0.5
-    );
+    const randomQuestions = questions();
 
     return (
         <>
@@ -72,11 +69,15 @@ function App() {
                                 key={index}
                                 path={`/question/${index + 1}`}
                                 element={
-                                    <Question
-                                        question={question}
-                                        questionIndex={index}
-                                        randomQuestions={randomQuestions}
-                                    />
+                                    index < randomQuestions.length ? (
+                                        <Question
+                                            question={question}
+                                            questionIndex={index}
+                                            randomQuestions={randomQuestions}
+                                        />
+                                    ) : (
+                                        <Navigate to="/not-found" replace />
+                                    )
                                 }
                             />
                         ))}
