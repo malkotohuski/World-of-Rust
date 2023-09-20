@@ -42,7 +42,7 @@ const questions = () => {
             difficulty: "easy",
         },
         {
-            question: "How many locked crates are there on the ship?",
+            question: "How many locked crates are there on the Cargo Ship?",
             answers: ["3", "2", "4", "1"],
             correctAnswerIndex: 0,
             difficulty: "easy",
