@@ -173,7 +173,10 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                                 className={`answer-item ${getAnswerClassName(
                                     index
                                 )}`}
-                                onClick={() => handleAnswerClick(index)}
+                                onClick={() => {
+                                    handleAnswerClick(index);
+                                    setHelpVisible(false); // Add this line to hide the help div when an answer is clicked
+                                }}
                             >
                                 <span className="answer-index">
                                     {String.fromCharCode(65 + index)}:
