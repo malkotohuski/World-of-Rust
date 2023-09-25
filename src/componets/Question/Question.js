@@ -47,12 +47,7 @@ const HelpDiv = () => {
 const Question = ({ question, questionIndex, randomQuestions }) => {
     const navigate = useNavigate();
 
-    const {
-        question: questionText,
-        answers,
-        correctAnswerIndex,
-        difficulty,
-    } = question;
+    const { question: questionText, answers, correctAnswerIndex } = question;
 
     const [helpVisible, setHelpVisible] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
