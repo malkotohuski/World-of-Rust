@@ -3,6 +3,24 @@ import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import "./Question.css";
 
+const sums = {
+    1: 100,
+    2: 200,
+    3: 300,
+    4: 400,
+    5: 500,
+    6: 1000,
+    7: 2000,
+    8: 3000,
+    9: 5000,
+    10: 10000,
+    11: 25000,
+    12: 50000,
+    13: 100000,
+    14: 250000,
+    15: 500000,
+};
+
 const HelpDiv = () => {
     const calculateRandomPercentages = () => {
         const letters = ["A", "B", "C", "D"];
@@ -44,7 +62,7 @@ const HelpDiv = () => {
     );
 };
 
-const Question = ({ question, questionIndex, randomQuestions }) => {
+const Question = ({ question, questionIndex, randomQuestions, difficulty }) => {
     const navigate = useNavigate();
 
     const { question: questionText, answers, correctAnswerIndex } = question;
@@ -149,6 +167,15 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
         setHelpVisible(!helpVisible);
     };
 
+    const getQuestionDifficulty = (questionIndex) => {
+        const questionSum = sums[questionIndex + 1];
+        if (questionSum >= 2000) {
+            return "medium";
+        } else {
+            return difficulty;
+        }
+    };
+
     return (
         <div className="question-page-container">
             <div className="question-container">
@@ -207,6 +234,7 @@ const Question = ({ question, questionIndex, randomQuestions }) => {
                 helpVisible={helpVisible}
                 handleHelpClick={handlerClickHelp}
                 callHelp={callHelp}
+                difficulty={getQuestionDifficulty(questionIndex)}
             />
         </div>
     );
@@ -234,24 +262,6 @@ const QuestionTable = ({
     const navigate = useNavigate(); // Use the useNavigate hook
     const currentQuestion = parseInt(location.pathname.split("/").pop(), 10);
     const maxEliminations = 4;
-
-    const sums = {
-        1: 100,
-        2: 200,
-        3: 300,
-        4: 400,
-        5: 500,
-        6: 1000,
-        7: 2000,
-        8: 3000,
-        9: 5000,
-        10: 10000,
-        11: 25000,
-        12: 50000,
-        13: 100000,
-        14: 250000,
-        15: 500000,
-    };
 
     const handleEliminateClick = () => {
         if (!halfHelp) {
