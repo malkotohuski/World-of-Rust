@@ -1,7 +1,7 @@
-import React from 'react';
-import './Albin.css';
-import albbinImage from '../../../images/albin-image.jpg';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import "./Albin.css";
+import albbinImage from "../../../images/albin-image.jpg";
+import { useNavigate } from "react-router-dom";
 
 function Albin() {
     const navigate = useNavigate();
@@ -11,8 +11,8 @@ function Albin() {
         // You can implement the functionality to add a comment
         // based on your requirements or use case.
 
-        navigate('/albin/comments');
-        console.log('Add Comment clicked');
+        navigate("/albin/comments");
+        console.log("Add Comment clicked");
     };
 
     const handleAddVideo = () => {
@@ -20,8 +20,8 @@ function Albin() {
         // You can implement the functionality to add a comment
         // based on your requirements or use case.
 
-        navigate('/albin/clips')
-        console.log('Add Video clicked');
+        navigate("/albin/clips");
+        console.log("Add Video clicked");
     };
 
     const handleBackToHomePage = () => {
@@ -29,19 +29,27 @@ function Albin() {
         // You can implement the functionality to add a comment
         // based on your requirements or use case.
 
-        navigate('/');
-        console.log('Back button clicked');
+        navigate("/");
+        console.log("Back button clicked");
     };
 
     return (
-        <div className='container'>
+        <div className="container">
             <h1>Albin - Rust Streamer</h1>
-            <p>Join Albin's Rust adventures and experience the thrill of survival in a harsh world.</p>
+            <p>
+                Join Albin's Rust adventures and experience the thrill of
+                survival in a harsh world.
+            </p>
             <div className="image-container">
                 <img src={albbinImage} alt="Albin" />
             </div>
             <h2>About Albin</h2>
-            <p>Albin is a skilled Rust streamer known for his strategic gameplay and engaging community. He has been streaming Rust for several years and loves to interact with his viewers.</p>
+            <p>
+                Albin is a skilled Rust streamer known for his strategic
+                gameplay and engaging community. He has been streaming Rust for
+                several years and loves to interact with his viewers.
+            </p>
+            <p>Game time : 12k hours</p>
             <h2>Streaming Schedule</h2>
             <p>Albin streams Rust on the following schedule:</p>
             <ul>
@@ -52,13 +60,49 @@ function Albin() {
             <h2>Follow Albin</h2>
             <p>Make sure to follow Albin on his streaming platforms:</p>
             <ul>
-                <li>Twitch: <a  className='twitchInfo' href="https://www.twitch.tv/albin" target="_blank" rel="noopener noreferrer">albin</a></li>
-                <li>Twitter: <a className='twitterInfo' href="https://twitter.com/albinrust" target="_blank" rel="noopener noreferrer">@albin</a></li>
-                <li>YouTube: <a className='youTubeInfo' href="https://www.youtube.com/@albin8819" target="_blank" rel="noopener noreferrer">Albin's YouTube Channel</a></li>
+                <li>
+                    Twitch:{" "}
+                    <a
+                        className="twitchInfo"
+                        href="https://www.twitch.tv/albin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        albin
+                    </a>
+                </li>
+                <li>
+                    Twitter:{" "}
+                    <a
+                        className="twitterInfo"
+                        href="https://twitter.com/albinrust"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        @albin
+                    </a>
+                </li>
+                <li>
+                    YouTube:{" "}
+                    <a
+                        className="youTubeInfo"
+                        href="https://www.youtube.com/@albin8819"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Albin's YouTube Channel
+                    </a>
+                </li>
             </ul>
-            <button className='button-comments' onClick={handleAddComment}>Comments</button>
-            <button className='button-video' onClick={handleAddVideo}>Clips </button>
-            <button className='button-video' onClick={handleBackToHomePage}>Back</button>
+            <button className="button-comments" onClick={handleAddComment}>
+                Comments
+            </button>
+            <button className="button-video" onClick={handleAddVideo}>
+                Clips{" "}
+            </button>
+            <button className="button-video" onClick={handleBackToHomePage}>
+                Back
+            </button>
         </div>
     );
 }
