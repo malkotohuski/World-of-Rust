@@ -48,6 +48,7 @@ function Dyanna() {
                 streams and engaging community. He has been streaming Rust for
                 several years and enjoys interacting with his viewers.
             </p>
+            <p>Game time : 11k hours</p>
             <h2>Streaming Schedule</h2>
             <p>Dyanna streams Rust on the following schedule:</p>
             <ul>
