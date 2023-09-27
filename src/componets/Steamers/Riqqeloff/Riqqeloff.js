@@ -49,6 +49,7 @@ function Riqqeloff() {
                 streaming Rust for several years and enjoys interacting with his
                 viewers.
             </p>
+            <p>Game time: 16k hours</p>
             <h2>Streaming Schedule</h2>
             <p>Riqqeloff streams Rust on the following schedule:</p>
             <ul>
