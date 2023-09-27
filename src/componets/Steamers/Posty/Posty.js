@@ -50,7 +50,7 @@ function Posty() {
                 viewers.
             </p>
             <h2>Streaming Schedule</h2>
-            <p>Posty streams Rust with 14k+ hours on the following schedule:</p>
+            <p>Posty streams Rust with 15+ hours on the following schedule:</p>
             <ul>
                 <li>Monday: 8 PM - 11 PM (EST)</li>
                 <li>Wednesday: 8 PM - 11 PM (EST)</li>
