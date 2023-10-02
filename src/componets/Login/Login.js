@@ -1,13 +1,29 @@
-import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
+import { UserContext } from "../Context/UserContext";
+import { useContext } from "react";
+import { useForm } from "../../hooks/useForm";
+
+const LoginFormKeys = {
+    Email: "email",
+    Password: "password",
+};
 
 const Login = () => {
-    const [email, setEmail] = useState("");
+    const { onLoginSubmit } = useContext(UserContext);
+    const { values, changeHandler, onSubmit } = useForm(
+        {
+            [LoginFormKeys.Email]: "",
+            [LoginFormKeys.Password]: "",
+        },
+        onLoginSubmit
+    );
+    /* const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const history = useNavigate();
+    const history = useNavigate(); */
 
-    const handleEmailChange = (e) => {
+    /*  const handleEmailChange = (e) => {
         setEmail(e.target.value);
     };
 
@@ -30,25 +46,28 @@ const Login = () => {
 
         // Redirect to "/home" after successful login
         history("/");
-    };
+    }; */
 
     return (
-        <form onSubmit={handleSubmit} className="login-form">
+        <form onSubmit={onSubmit} className="login-form">
             <h1>Login</h1>
             <label>
                 Email:
                 <input
                     type="email"
-                    value={email}
-                    onChange={handleEmailChange}
+                    name={LoginFormKeys.Email}
+                    placeholder="malkotohuski@gmail.com"
+                    value={values[LoginFormKeys.Email]}
+                    onChange={changeHandler}
                 />
             </label>
             <label>
                 Password:
                 <input
                     type="password"
-                    value={password}
-                    onChange={handlePasswordChange}
+                    name={LoginFormKeys.Password}
+                    value={values[LoginFormKeys.Password]}
+                    onChange={changeHandler}
                 />
             </label>
             <div className="forgot-password">
