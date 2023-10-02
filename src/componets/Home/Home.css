@@ -1,3 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../../images/body-image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 94vh; /* Set the body's height to 100% of the viewport height */
+    font-family: Arial, sans-serif;
+}
+
+html {
+    height: 100%; /* Set the html element's height to 100% of the viewport height */
+}
+
 .home-page {
     background: url(../../images/-Rust-game-.jpg) no-repeat center center fixed;
     background-position: center;
@@ -69,15 +84,25 @@ h2 {
     font-family: 'Roboto', sans-serif;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    word-spacing: 1.4px;
-    color: var(--clr-dark);
-    background-color: var(--clr-light);
+ .Home-main {
+        background-image: url(../../images/body-image.jpg); 
+        display: contents;
+        font-family: Arial, sans-serif;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: auto;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+        word-spacing: 1.4px;
+        color: var(--clr-dark);
+        background-color: var(--clr-light);
+      }
+   
 
-}
+
 
 @keyframes slideInLeft {
     from {
