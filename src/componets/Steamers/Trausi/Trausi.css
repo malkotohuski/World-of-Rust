@@ -7,12 +7,12 @@
 }
 
 .image-container {
-  display: inline-table;
+  display:inline-grid;
   margin: 20px 0;
 }
 
 img {
-  max-width: 300px;
+  max-width: 200px;
   border-radius: 50%;
 }
 

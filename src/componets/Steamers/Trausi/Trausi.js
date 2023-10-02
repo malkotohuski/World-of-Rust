@@ -11,7 +11,7 @@ function Trausi() {
         // You can implement the functionality to add a comment
         // based on your requirements or use case.
 
-        navigate("/posty/comments");
+        navigate("/trausi/comments");
         console.log("Add Comment clicked");
     };
 
@@ -19,7 +19,7 @@ function Trausi() {
         // Handle adding a comment logic here
         // You can implement the functionality to add a comment
         // based on your requirements or use case.
-        navigate("/posty/clips");
+        navigate("/trausi/clips");
         console.log("Add Video clicked");
     };
 
@@ -39,11 +39,9 @@ function Trausi() {
                 Welcome to the world of Trausi! Join him on thrilling Rust
                 adventures and witness epic gameplay.
             </p>
-
             <div className="image-container">
                 <img src={trausiImage} alt="Trausi" />
             </div>
-
             <h2>About Trausi</h2>
             <p>
                 Trausi is a renowned Rust streamer known for his skilled
