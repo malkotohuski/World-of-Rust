@@ -37,6 +37,7 @@ import Fireworks from "./componets/Game-over/Game-over";
 import questions from "./componets/Question/Questions";
 import Riqqeloff from "./componets/Steamers/Riqqeloff/Riqqeloff";
 import Dyanna from "./componets/Steamers/Dyanna/Dyanna";
+import { RouteGuard } from "./componets/Common/RouteGuard";
 
 function App() {
     const randomQuestions = questions();
@@ -93,7 +94,14 @@ function App() {
                             element={<VanillaUS />}
                         />
                         <Route path="/posty" element={<Posty />} />
-                        <Route path="/posty/comments" element={<Comments />} />
+                        <Route
+                            path="/posty/comments"
+                            element={
+                                <RouteGuard>
+                                    <Comments />
+                                </RouteGuard>
+                            }
+                        />
                         <Route path="/posty/clips" element={<Clips />} />
                         <Route path="/albin" element={<Albin />} />
                         <Route path="/albin/comments" element={<Comments />} />
