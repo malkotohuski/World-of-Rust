@@ -93,13 +93,11 @@ const Question = ({ question, questionIndex, randomQuestions, difficulty }) => {
     }, [questionIndex]);
 
     const handleAnswerClick = (index) => {
-        setSelectedAnswer(index);
-        resetEliminate();
         if (gameOver) {
-            setGameOver(false);
-            setReachedAmount("");
             return;
         }
+        setSelectedAnswer(index);
+        resetEliminate();
 
         if (index === correctAnswerIndex) {
             setTimeout(() => {
@@ -125,7 +123,7 @@ const Question = ({ question, questionIndex, randomQuestions, difficulty }) => {
             setGameOver(true);
             setReachedAmount("");
         }
-        navigate(`/question/${questionIndex + 1}`);
+        /*  navigate(`/question/${questionIndex + 1}`); */
     };
 
     const getAnswerClassName = (index) => {
@@ -199,6 +197,7 @@ const Question = ({ question, questionIndex, randomQuestions, difficulty }) => {
                                     handleAnswerClick(index);
                                     setHelpVisible(false); // Add this line to hide the help div when an answer is clicked
                                 }}
+                                disabled={gameOver}
                             >
                                 <span className="answer-index">
                                     {String.fromCharCode(65 + index)}:
