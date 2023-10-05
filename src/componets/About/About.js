@@ -7,6 +7,8 @@ const containerStyle = {
     height: "400px",
 };
 
+const mail = "malkotohuski@gmail.com";
+
 const center = {
     lat: 42.6977,
     lng: 23.3219,
@@ -22,14 +24,13 @@ const AboutUs = () => {
             </p>
             <ul>
                 <li>
-                    gmail:{" "}
                     <a
                         className="twitterInfo"
                         href="https://accounts.google.com/SignOutOptions?hl=bg&continue=https://mail.google.com&service=mail&ec=GBRAFw"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        @malkotohsuki@gmail.com
+                        {mail}
                     </a>
                 </li>
             </ul>
