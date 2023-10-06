@@ -9,6 +9,8 @@ const containerStyle = {
 
 const mail = "malkotohuski@gmail.com";
 
+const faceBook = "https://www.facebook.com/";
+
 const center = {
     lat: 42.6977,
     lng: 23.3219,
@@ -31,6 +33,16 @@ const AboutUs = () => {
                         rel="noopener noreferrer"
                     >
                         {mail}
+                    </a>
+                </li>
+                <li>
+                    <a
+                        className="facebookInfo"
+                        href="https://www.facebook.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {faceBook}
                     </a>
                 </li>
             </ul>
