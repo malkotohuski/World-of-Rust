@@ -26,7 +26,7 @@ function Home() {
                     <section>
                         <div className="heading-1">
                             <h2>
-                                Welcome to the world of Rust, Frend{" "}
+                                Welcome to the world of Rust, Friend{" "}
                                 {isLoggedIn && <h2>{name}</h2>}
                                 {isLoggedIn && (
                                     <button
