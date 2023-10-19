@@ -1,60 +1,43 @@
 import React from "react";
 import "./Register.css";
-import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { Link } from "react-router-dom"; // Import withRouter
+import { useContext } from "react";
 import { useForm } from "../../hooks/useForm";
 import { UserContext } from "../Context/UserContext";
 import { useNavigate } from "react-router-dom";
+
+const RegisterFromKeys = {
+    Name: "name",
+    Email: "email",
+    Password: "password", // Fixed the typo in the password field
+};
 
 const Register = () => {
     const { onRegisterSubmit } = useContext(UserContext);
     const { values, changeHandler, onSubmit } = useForm(
         {
-            email: "",
-            password: "",
-            name: "",
+            [RegisterFromKeys.Name]: "",
+            [RegisterFromKeys.Email]: "",
+            [RegisterFromKeys.Password]: "",
         },
-        onRegisterSubmit
+        () => {
+            onRegisterSubmit();
+            navigate("/"); // Use props.history to redirect to /home
+        }
     );
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+
     const navigate = useNavigate();
 
-    const handleNameChange = (e) => {
-        setName(e.target.value);
-    };
-
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Save registration data to localStorage
-        const token = "your_token_here";
-
-        localStorage.setItem("token", token);
-        localStorage.setItem("name", name);
-        localStorage.setItem("email", email);
-        localStorage.setItem("password", password);
-
-        // Redirect to "/"
-        navigate("/");
-    };
-
     return (
-        <form onSubmit={handleSubmit} className="register-form">
+        <form onSubmit={onSubmit} className="register-form">
             <h1>Register</h1>
             <label>
                 Name:
                 <input
                     type="text"
-                    value={values.name}
+                    name={RegisterFromKeys.Name}
+                    placeholder="Shushkata"
+                    value={values[RegisterFromKeys.Name]}
                     onChange={changeHandler}
                 />
             </label>
@@ -62,7 +45,9 @@ const Register = () => {
                 Email:
                 <input
                     type="email"
-                    value={values.email}
+                    name={RegisterFromKeys.Email}
+                    placeholder="malkotohuski@gmail.com"
+                    value={values[RegisterFromKeys.Email]}
                     onChange={changeHandler}
                 />
             </label>
@@ -70,7 +55,9 @@ const Register = () => {
                 Password:
                 <input
                     type="password"
-                    value={values.password}
+                    name={RegisterFromKeys.Password}
+                    placeholder="123456"
+                    value={values[RegisterFromKeys.Password]}
                     onChange={changeHandler}
                 />
             </label>
@@ -84,4 +71,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default (Register); // Wrap the component with withRouter

@@ -4,6 +4,7 @@ import "./Login.css";
 import { UserContext } from "../Context/UserContext";
 import { useContext } from "react";
 import { useForm } from "../../hooks/useForm";
+import { useNavigate } from "react-router-dom";
 
 const LoginFormKeys = {
     Email: "email",
@@ -17,8 +18,14 @@ const Login = () => {
             [LoginFormKeys.Email]: "",
             [LoginFormKeys.Password]: "",
         },
-        onLoginSubmit
+        () => {
+        onLoginSubmit();
+        navigate("/");
+    }
     );
+
+    const navigate = useNavigate();
+
     /* const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const history = useNavigate(); */

@@ -68,7 +68,7 @@ function Posty() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        posty
+                        Posty
                     </a>
                 </li>
                 <li>
