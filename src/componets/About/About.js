@@ -7,9 +7,7 @@ const containerStyle = {
     height: "400px",
 };
 
-const mail = "malkotohuski@gmail.com";
 
-const faceBook = "https://www.facebook.com/";
 
 const center = {
     lat: 42.6977,
@@ -27,22 +25,32 @@ const AboutUs = () => {
             <ul>
                 <li>
                     <a
-                        className="twitterInfo"
+                        className="emailInfo"
                         href="https://accounts.google.com/SignOutOptions?hl=bg&continue=https://mail.google.com&service=mail&ec=GBRAFw"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        {mail}
+                      email: malkotohuski@gmail.com
                     </a>
                 </li>
                 <li>
                     <a
                         className="facebookInfo"
-                        href="https://www.facebook.com/"
+                        href="https://www.facebook.com/profile.php?id=100065511013115"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        {faceBook}
+                      facebook: Daniel Dimitrov
+                    </a>
+                </li>
+                <li>
+                    <a
+                        className="youtubeInfo"
+                        href="https://www.youtube.com/channel/UCfwAV2IrgFXdh_Gqt-piq2A"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                      youtube: Daniel Dimitrov
                     </a>
                 </li>
             </ul>

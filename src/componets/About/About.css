@@ -28,5 +28,10 @@
     margin-top: 20px;
   }
   
+  .facebookInfo,
+  .emailInfo,
+  .youtubeInfo {
+    color: #007bff !important;
+  }
   /* Add any additional styling as per your preference */
   
