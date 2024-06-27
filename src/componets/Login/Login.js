@@ -19,9 +19,9 @@ const Login = () => {
             [LoginFormKeys.Password]: "",
         },
         () => {
-        onLoginSubmit();
-        navigate("/");
-    }
+            onLoginSubmit();
+            navigate("/");
+        }
     );
 
     const navigate = useNavigate();
@@ -63,7 +63,7 @@ const Login = () => {
                 <input
                     type="email"
                     name={LoginFormKeys.Email}
-                    placeholder="malkotohuski@gmail.com"
+                    placeholder="devmasterstech@gmail.com@gmail.com"
                     value={values[LoginFormKeys.Email]}
                     onChange={changeHandler}
                 />

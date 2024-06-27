@@ -15,7 +15,7 @@ const ContactPage = () => {
         name,
         email,
         message,
-        recipient: 'malkotohuski@gmail.com' // Specify the recipient email address here
+        recipient: 'devmasterstech@gmail.com@gmail.com' // Specify the recipient email address here
       });
 
       console.log(response.data); // Optional: Handle server response

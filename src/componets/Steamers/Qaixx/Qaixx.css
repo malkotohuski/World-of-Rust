@@ -1,6 +1,7 @@
 .container {
   text-align: center;
   padding: 20px;
+  height: auto;
 }
 
 .image-container {
