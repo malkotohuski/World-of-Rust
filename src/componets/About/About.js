@@ -30,7 +30,7 @@ const AboutUs = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                      email: malkotohuski@gmail.com
+                        email: devmasterstech@gmail.com@gmail.com
                     </a>
                 </li>
                 <li>
@@ -40,7 +40,7 @@ const AboutUs = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                      facebook: Daniel Dimitrov
+                        facebook: Daniel Dimitrov
                     </a>
                 </li>
                 <li>
@@ -50,7 +50,7 @@ const AboutUs = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                      youtube: Daniel Dimitrov
+                        youtube: Daniel Dimitrov
                     </a>
                 </li>
             </ul>

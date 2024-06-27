@@ -46,7 +46,7 @@ const Register = () => {
                 <input
                     type="email"
                     name={RegisterFromKeys.Email}
-                    placeholder="malkotohuski@gmail.com"
+                    placeholder="devmasterstech@gmail.com@gmail.com"
                     value={values[RegisterFromKeys.Email]}
                     onChange={changeHandler}
                 />

@@ -11,7 +11,7 @@ function Qaixx() {
         // You can implement the functionality to add a comment
         // based on your requirements or use case.
 
-        navigate("/posty/comments");
+        navigate("/qaixx/comments");
         console.log("Add Comment clicked");
     };
 
@@ -19,7 +19,7 @@ function Qaixx() {
         // Handle adding a comment logic here
         // You can implement the functionality to add a comment
         // based on your requirements or use case.
-        navigate("/posty/clips");
+        navigate("/qaixx/clips");
         console.log("Add Video clicked");
     };
 
