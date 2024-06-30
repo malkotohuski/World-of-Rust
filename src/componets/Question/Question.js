@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 import "./Question.css";
@@ -62,10 +62,9 @@ const HelpDiv = () => {
     );
 };
 
-const Question = ({ question, questionIndex, randomQuestions, difficulty }) => {
+const Question = ({ questionIndex, randomQuestions, difficulty }) => {
     const navigate = useNavigate();
-
-    const { question: questionText, answers, correctAnswerIndex } = question;
+    const [currentQuestion, setCurrentQuestion] = useState(null);
 
     const [helpVisible, setHelpVisible] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -79,7 +78,20 @@ const Question = ({ question, questionIndex, randomQuestions, difficulty }) => {
 
     let nextQuestionIndex = questionIndex + 1;
 
-    // Define the question difficulty based on the question index
+    // Filter questions based on difficulty
+    const filterQuestions = useCallback(() => {
+        if (questionIndex <= 5) {
+            return randomQuestions.filter(q => q.difficulty === "easy");
+        } else {
+            return randomQuestions.filter(q => q.difficulty === "medium");
+        }
+    }, [questionIndex, randomQuestions]);
+
+    useEffect(() => {
+        const filteredQuestions = filterQuestions();
+        setCurrentQuestion(filteredQuestions[questionIndex % filteredQuestions.length]);
+    }, [questionIndex, randomQuestions, filterQuestions]);
+
     const resetEliminate = () => {
         setEliminateUsed(false);
     };
@@ -99,7 +111,7 @@ const Question = ({ question, questionIndex, randomQuestions, difficulty }) => {
         setSelectedAnswer(index);
         resetEliminate();
 
-        if (index === correctAnswerIndex) {
+        if (index === currentQuestion.correctAnswerIndex) {
             setTimeout(() => {
                 if (nextQuestionIndex < randomQuestions.length) {
                     navigate(`/question/${nextQuestionIndex + 1}`);
@@ -123,12 +135,11 @@ const Question = ({ question, questionIndex, randomQuestions, difficulty }) => {
             setGameOver(true);
             setReachedAmount("");
         }
-        /*  navigate(`/question/${questionIndex + 1}`); */
     };
 
     const getAnswerClassName = (index) => {
         if (selectedAnswer !== null) {
-            if (index === correctAnswerIndex) {
+            if (index === currentQuestion.correctAnswerIndex) {
                 return selectedAnswer === index ? "answer-correct" : "";
             } else if (index === selectedAnswer) {
                 return "answer-incorrect";
@@ -157,7 +168,6 @@ const Question = ({ question, questionIndex, randomQuestions, difficulty }) => {
 
             allocatedPercentages.push(remainingPercentage);
 
-            // Optionally, you can set a timeout to hide the help div
             setTimeout(() => {
                 setHelpVisible(false);
             }, 15000); // 15 seconds
@@ -165,77 +175,68 @@ const Question = ({ question, questionIndex, randomQuestions, difficulty }) => {
         setHelpVisible(!helpVisible);
     };
 
-    const getQuestionDifficulty = (questionIndex) => {
-        const questionSum = sums[questionIndex + 1];
-        if (questionSum >= 2000) {
-            return "medium";
-        } else {
-            return difficulty;
-        }
-    };
-
     return (
-        <div className="question-page-container">
-            <div className="question-container">
-                {reachedAmount && (
-                    <div className="reached-amount-container">
-                        <p className="reached-amount-text">{reachedAmount}</p>
-                    </div>
-                )}
-                {helpVisible && <HelpDiv />}
+        currentQuestion && (
+            <div className="question-page-container">
+                <div className="question-container">
+                    {reachedAmount && (
+                        <div className="reached-amount-container">
+                            <p className="reached-amount-text">{reachedAmount}</p>
+                        </div>
+                    )}
+                    {helpVisible && <HelpDiv />}
 
-                <div className="question-tables">
-                    <h2 className="question-text">{questionText}</h2>
-                    <ul className="answer-list">
-                        {answers.map((answer, index) => (
-                            <li
-                                key={index}
-                                className={`answer-item ${getAnswerClassName(
-                                    index
-                                )}`}
-                                onClick={() => {
-                                    handleAnswerClick(index);
-                                    setHelpVisible(false); // Add this line to hide the help div when an answer is clicked
-                                }}
-                                disabled={gameOver}
-                            >
-                                <span className="answer-index">
-                                    {String.fromCharCode(65 + index)}:
-                                </span>{" "}
-                                {answer}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                {gameOver && selectedAnswer !== correctAnswerIndex && (
-                    <div className="game-over-container">
-                        <p className="game-over-text">{GameOver}</p>
-                        <button
-                            className="restart-button"
-                            onClick={() => navigate("/question")}
-                        >
-                            Restart
-                        </button>
+                    <div className="question-tables">
+                        <h2 className="question-text">{currentQuestion.question}</h2>
+                        <ul className="answer-list">
+                            {currentQuestion.answers.map((answer, index) => (
+                                <li
+                                    key={index}
+                                    className={`answer-item ${getAnswerClassName(index)}`}
+                                    onClick={() => {
+                                        handleAnswerClick(index);
+                                        setHelpVisible(false);
+                                    }}
+                                    disabled={gameOver}
+                                >
+                                    <span className="answer-index">
+                                        {String.fromCharCode(65 + index)}:
+                                    </span>{" "}
+                                    {answer}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
-                )}
+                    {gameOver && selectedAnswer !== currentQuestion.correctAnswerIndex && (
+                        <div className="game-over-container">
+                            <p className="game-over-text">{GameOver}</p>
+                            <button
+                                className="restart-button"
+                                onClick={() => navigate("/question")}
+                            >
+                                Restart
+                            </button>
+                        </div>
+                    )}
+                </div>
+                <QuestionTable
+                    currentQuestionIndex={questionIndex + 1}
+                    totalQuestions={randomQuestions.length}
+                    correctAnswerIndex={currentQuestion.correctAnswerIndex}
+                    setHiddenAnswers={setHiddenAnswers}
+                    setSelectedAnswer={setSelectedAnswer}
+                    gameOver={gameOver}
+                    selectedAnswer={selectedAnswer}
+                    answers={currentQuestion.answers}
+                    eliminateUsed={eliminateUsed}
+                    setEliminateUsed={setEliminateUsed}
+                    helpVisible={helpVisible}
+                    handleHelpClick={handlerClickHelp}
+                    callHelp={callHelp}
+                    difficulty={currentQuestion.difficulty}
+                />
             </div>
-            <QuestionTable
-                currentQuestionIndex={questionIndex + 1}
-                totalQuestions={randomQuestions.length}
-                correctAnswerIndex={correctAnswerIndex}
-                setHiddenAnswers={setHiddenAnswers}
-                setSelectedAnswer={setSelectedAnswer}
-                gameOver={gameOver}
-                selectedAnswer={selectedAnswer}
-                answers={answers}
-                eliminateUsed={eliminateUsed}
-                setEliminateUsed={setEliminateUsed}
-                helpVisible={helpVisible}
-                handleHelpClick={handlerClickHelp}
-                callHelp={callHelp}
-                difficulty={getQuestionDifficulty(questionIndex)}
-            />
-        </div>
+        )
     );
 };
 
@@ -258,7 +259,7 @@ const QuestionTable = ({
 
     const [eliminationsUsed, setEliminationsUsed] = useState(0);
     const location = useLocation();
-    const navigate = useNavigate(); // Use the useNavigate hook
+    const navigate = useNavigate();
     const currentQuestion = parseInt(location.pathname.split("/").pop(), 10);
     const maxEliminations = 4;
 
@@ -273,27 +274,19 @@ const QuestionTable = ({
                     }))
                     .filter((item) => item.index !== correctAnswerIndex);
 
-                // Shuffle the incorrect answers
                 const shuffledIncorrectAnswers = shuffleArray(incorrectAnswers);
 
-                // Select two incorrect answers to eliminate
                 const eliminatedAnswers = [
                     shuffledIncorrectAnswers[0].index,
                     shuffledIncorrectAnswers[1].index,
                 ];
 
-                // Include the eliminated answer indices in hiddenAnswers
                 setHiddenAnswers(eliminatedAnswers);
-
-                // Increment the eliminationsUsed counter
                 setEliminationsUsed(eliminationsUsed + 1);
 
-                // Check if all eliminations are used, and if so, reset hiddenAnswers
                 if (eliminationsUsed + 1 === maxEliminations) {
-                    // Reset hiddenAnswers here if needed
                 }
 
-                // Set eliminateUsed to true to prevent further use
                 setEliminateUsed(true);
             }
             setTimeout(() => {
@@ -332,8 +325,6 @@ const QuestionTable = ({
                     navigate("/game-over");
                 }
             }, 1500);
-
-            // Hide the HelpDiv after 5 seconds
         }
     };
 
@@ -343,7 +334,7 @@ const QuestionTable = ({
                 <tbody>
                     {[...Array(Math.min(totalQuestions, 15))].map(
                         (_, index) => {
-                            const questionNumber = index + 1; // Start from 1
+                            const questionNumber = index + 1;
                             const isActive = currentQuestion === questionNumber;
                             const isReachedAmount =
                                 questionNumber === 5 || questionNumber === 10;
@@ -388,14 +379,14 @@ const QuestionTable = ({
                 <button
                     className="help-group"
                     onClick={handlerClickCallTeam}
-                    disabled={helpUsed} // Disable the button once help is used
+                    disabled={helpUsed}
                 >
                     Call
                 </button>
 
                 <button
                     className="call-team"
-                    onClick={handleHelpClick} // Use handleHelpClick instead of handlerClickHelp
+                    onClick={handleHelpClick}
                     disabled={callHelp}
                 >
                     ^^^
